@@ -1,16 +1,18 @@
 html, body {
     margin: 0 auto;
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 header {
-    background-color: pink;
+    /* background-color: pink; */
     font-size: 3rem;
     padding: 1rem 3rem;
+    border-bottom: 3px solid black;
 }
 
 #main {
-    background-color: aqua;
+    /* background-color: aqua; */
     height: 80vh;
 }
 
@@ -19,11 +21,12 @@ header {
 }
 
 #projects {
-    background-color: green;
+    /* background-color: green; */
     height: 100%;
     flex: 1;
     padding-bottom: 2rem;
     text-align: center;
+    border-right: 3px solid black;
 }
 
 .project-item {
@@ -33,11 +36,12 @@ header {
 }
 
 #tasks {
-    background-color: yellow;
+    /* background-color: yellow; */
     height: 100%;
-    flex: 3
+    flex: 3;
+    padding-top: 2rem; 
 }
 
 .task-item {
-    padding: 2rem 4rem;
+    padding: 1rem 4rem;
 }
