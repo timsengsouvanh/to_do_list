@@ -1,0 +1,43 @@
+html, body {
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: pink;
+    font-size: 3rem;
+    padding: 1rem 3rem;
+}
+
+#main {
+    background-color: aqua;
+    height: 80vh;
+}
+
+.flex-area {
+    display: flex;
+}
+
+#projects {
+    background-color: green;
+    height: 100%;
+    flex: 1;
+    padding-bottom: 2rem;
+    text-align: center;
+}
+
+.project-item {
+    padding: 2rem 2rem;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+}
+
+#tasks {
+    background-color: yellow;
+    height: 100%;
+    flex: 3
+}
+
+.task-item {
+    padding: 2rem 4rem;
+}
