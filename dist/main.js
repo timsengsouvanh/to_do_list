@@ -1,0 +1,1 @@
+(()=>{"use strict";const o=(o,t,r,e)=>({name:o,description:t,duedate:r,priority:e});let t=[o("study programming","study a lot please","tomorrow","high priority"),o("study japanese","study a lot please","tomorrow","high priority")];console.log(t)})();
