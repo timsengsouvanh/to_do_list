@@ -1,4 +1,4 @@
-import task from "./todologic"
+import * as index1 from "./index"
 
 function createTaskMain(){
     let taskMain = document.createElement('div')
@@ -21,11 +21,11 @@ function createTask(name){
     return task
 }
 
-function createDelete(obj){
+export function createDelete(obj){
     let deletebtn = document.createElement('button')
     deletebtn.innerHTML = '&times;'
     deletebtn.classList.add('delete-btn')
-    deletebtn.setAttribute('data', obj.name)
+    deletebtn.setAttribute('data', (index1.task1.indexOf(obj)))
 
     return deletebtn
 }
@@ -51,6 +51,13 @@ function displayTasks(obj){
     taskCheckArea.appendChild(taskName)
 
     let deletebtn = createDelete(obj)
+    deletebtn.addEventListener('click', () => {
+        let index = deletebtn.getAttribute('data')
+        index1.task1.splice(index, 1)
+        console.log(index1.task1)
+        taskarea.innerHTML = ''
+        index1.initialize()
+    })
     task.appendChild(deletebtn)
 }
 
