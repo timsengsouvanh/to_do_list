@@ -21,9 +21,11 @@ function createTask(name){
     return task
 }
 
-function createDelete(){
+function createDelete(obj){
     let deletebtn = document.createElement('button')
     deletebtn.innerHTML = '&times;'
+    deletebtn.classList.add('delete-btn')
+    deletebtn.setAttribute('data', obj.name)
 
     return deletebtn
 }
@@ -48,7 +50,7 @@ function displayTasks(obj){
     let taskName = createTask(obj.name)
     taskCheckArea.appendChild(taskName)
 
-    let deletebtn = createDelete()
+    let deletebtn = createDelete(obj)
     task.appendChild(deletebtn)
 }
 
