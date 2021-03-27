@@ -1,4 +1,5 @@
 import * as index1 from "./index"
+import * as todologic from "./todologic"
 
 function createTaskMain(){
     let taskMain = document.createElement('div')
@@ -52,11 +53,11 @@ function displayTasks(obj){
 
     let deletebtn = createDelete(obj)
     deletebtn.addEventListener('click', () => {
-        let index = deletebtn.getAttribute('data')
-        index1.task1.splice(index, 1)
-        console.log(index1.task1)
-        taskarea.innerHTML = ''
-        index1.initialize()
+        // let index = deletebtn.getAttribute('data')
+        // index1.task1.splice(index, 1)
+        // console.log(index1.task1)
+        // taskarea.innerHTML = ''
+        // index1.initialize()
     })
     task.appendChild(deletebtn)
 }

@@ -8,19 +8,19 @@ export let task1 = [
 
 ];
 
-// function addEventListeners(){
-//     let delbtn = document.querySelectorAll('.delete-btn')
-//     delbtn.forEach(element => {
-//         element.addEventListener('click', () => todologic.removeTask())
-//     })
-// }
+function addEventListeners(){
+    let delbtn = document.querySelectorAll('.delete-btn')
+    delbtn.forEach(element => {
+        element.addEventListener('click', () => todologic.removeTask(element))
+    })
+}
 
 
 export function initialize(){
     task1.forEach(element => {
     displayTasks(element)
 })
-// addEventListeners()
+addEventListeners()
 }
 
 initialize()
