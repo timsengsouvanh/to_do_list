@@ -16,6 +16,8 @@ export function clear(){
     taskarea.innerHTML = ''
 }
 
-// export default task
+export function addTask(){
+    alert('nice')
+}
 
 

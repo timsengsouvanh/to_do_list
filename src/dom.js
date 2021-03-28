@@ -37,7 +37,7 @@ function createCheckbox(){
     return checkbox
 }
 
-function displayTasks(obj){
+export function displayTasks(obj){
     let taskarea = document.querySelector('#tasks')
     let task = createTaskMain()
     taskarea.appendChild(task)
@@ -55,6 +55,49 @@ function displayTasks(obj){
     task.appendChild(deletebtn)
 }
 
+function createTitleInput(){
+    let titleInput = document.createElement('input')
+    titleInput.setAttribute('type', 'text')
+    return titleInput
+}
 
+function createConfirmNewTask(){
+    let confirmnewtask = document.createElement('button')
+    confirmnewtask.innerHTML = '&#10004;'
+    return confirmnewtask
+}
 
-export default displayTasks;
+function creatediv(){
+    let btnarea = document.createElement('div')
+    return btnarea
+}
+
+export function createPotentialTask(){
+    let taskarea = document.querySelector('#tasks')
+    let task = createTaskMain()
+    taskarea.appendChild(task)
+
+    let taskCheckArea = createCheckTaskArea()
+    task.appendChild(taskCheckArea)
+
+    let checkbox = createCheckbox()
+    taskCheckArea.appendChild(checkbox)
+
+    let titleInput = createTitleInput()
+    taskCheckArea.appendChild(titleInput)
+
+    let div = creatediv()
+    task.appendChild(div)
+
+    let checkmark = createConfirmNewTask()
+    checkmark.classList.add('margin')
+    div.appendChild(checkmark)
+
+    let deletebtn = createDelete()
+    deletebtn.classList.add('margin')
+    deletebtn.addEventListener('click', () => {
+        task.remove()
+    })
+    div.appendChild(deletebtn)
+}
+
