@@ -11,7 +11,7 @@ function createTaskMain(){
 function createCheckTaskArea(){
     let checkTaskArea = document.createElement('div')
     checkTaskArea.classList.add('flex-area')
-    checkTaskArea.classList.add('task-area')
+    checkTaskArea.classList.add('check-task-area')
     return checkTaskArea
 }
 
@@ -52,13 +52,6 @@ function displayTasks(obj){
     taskCheckArea.appendChild(taskName)
 
     let deletebtn = createDelete(obj)
-    deletebtn.addEventListener('click', () => {
-        // let index = deletebtn.getAttribute('data')
-        // index1.task1.splice(index, 1)
-        // console.log(index1.task1)
-        // taskarea.innerHTML = ''
-        // index1.initialize()
-    })
     task.appendChild(deletebtn)
 }
 
