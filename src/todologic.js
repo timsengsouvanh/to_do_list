@@ -6,16 +6,14 @@ export const task = (name, description, duedate, priority) => {
 }
 
 export function removeTask(target){
-    let taskarea = document.querySelector('#tasks')
     let data = target.getAttribute('data')
     index.task1.splice(data, 1)
-    taskarea.innerHTML = ''
-    index.initialize()
     console.log(index.task1)
 }
 
-function clear(){
-
+export function clear(){
+    let taskarea = document.querySelector('#tasks')
+    taskarea.innerHTML = ''
 }
 
 // export default task

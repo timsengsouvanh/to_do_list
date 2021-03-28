@@ -11,7 +11,12 @@ export let task1 = [
 function addEventListeners(){
     let delbtn = document.querySelectorAll('.delete-btn')
     delbtn.forEach(element => {
-        element.addEventListener('click', () => todologic.removeTask(element))
+        element.addEventListener('click', () => {
+            todologic.removeTask(element)
+            todologic.clear()
+            initialize()
+        }
+            )
     })
 }
 
