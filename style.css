@@ -16,7 +16,6 @@ button {
     border: none;
     outline: none;
     cursor: pointer;
-    
 }
 
 #main {
@@ -28,7 +27,7 @@ button {
     display: flex;
 }
 
-.task-area {
+.check-task-area {
     gap: 2rem;
 }
 
@@ -47,14 +46,29 @@ button {
     border-bottom: 1px solid white;
 }
 
+#task-area{
+    flex: 3;
+}
+
 #tasks {
-    /* background-color: yellow; */
     height: 100%;
     flex: 3;
-    padding-top: 2rem; 
+    padding-top: 1rem; 
+}
+
+#addbtn {
+    font-size: 1rem;
+    padding: .5rem .75rem;
+    background-color: rgb(0, 153, 255);
 }
 
 .task-item {
     padding: 1rem 4rem;
     justify-content: space-between;
+}
+
+#crudbtn{
+    padding: .5rem;
+    display: flex;
+    justify-content: flex-end;
 }
