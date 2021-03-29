@@ -33,8 +33,10 @@ function addEventListenersinitial(){
 function addEventListenerAddButton(){
     let addbtn = document.querySelector('#addbtn')
     addbtn.addEventListener('click', () => {
+        if (document.getElementById('textinput') === null){
         dom.createPotentialTask()
         addEventListenerAddTask()
+        }
     })
 }
 
