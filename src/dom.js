@@ -34,6 +34,7 @@ export function createDelete(obj){
 function createCheckbox(){
     let checkbox = document.createElement('input')
     checkbox.setAttribute('type', 'checkbox')
+    checkbox.classList.add('checkbox')
     return checkbox
 }
 

@@ -18,7 +18,16 @@ function addEventListenersinitial(){
         }
             )
     })
-   
+   let checkbox = document.querySelectorAll('.checkbox')
+   checkbox.forEach(element => {
+       element.addEventListener('change', () => {
+        let hello = element.closest('.check-task-area') 
+        if (element.checked){
+           hello.classList.add('completed-item')    
+           }
+        else hello.classList.remove('completed-item') 
+       })
+   })
 }
 
 function addEventListenerAddButton(){

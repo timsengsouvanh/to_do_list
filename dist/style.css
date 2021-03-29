@@ -76,3 +76,8 @@ button {
     display: flex;
     justify-content: flex-start;
 }
+
+.completed-item{
+    text-decoration: line-through;
+    color: rgb(148, 148, 148);
+}
