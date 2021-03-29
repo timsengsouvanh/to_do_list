@@ -17,7 +17,13 @@ export function clear(){
 }
 
 export function addTask(){
-    alert('nice')
+    let title = document.getElementById('textinput')
+    let newtask = task(title.value)
+    index.task1.push(newtask)
+    clear()
+    index.initialize()
+    console.log(index.task1)
+
 }
 
 

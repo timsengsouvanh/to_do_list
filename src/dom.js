@@ -58,12 +58,14 @@ export function displayTasks(obj){
 function createTitleInput(){
     let titleInput = document.createElement('input')
     titleInput.setAttribute('type', 'text')
+    titleInput.setAttribute('id', 'textinput')
     return titleInput
 }
 
 function createConfirmNewTask(){
     let confirmnewtask = document.createElement('button')
     confirmnewtask.innerHTML = '&#10004;'
+    confirmnewtask.classList.add('confirm')
     return confirmnewtask
 }
 
