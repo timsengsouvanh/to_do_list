@@ -7,8 +7,8 @@ export const task = (name, description, duedate, priority) => {
 
 export function removeTask(target){
     let data = target.getAttribute('data')
-    index.task1.splice(data, 1)
-    console.log(index.task1)
+    index.currentTask.splice(data, 1)
+    console.log(index.currentTask)
 }
 
 export function clear(){
@@ -19,11 +19,12 @@ export function clear(){
 export function addTask(){
     let title = document.getElementById('textinput')
     let newtask = task(title.value)
-    index.task1.push(newtask)
+    index.currentTask.push(newtask)
     clear()
     index.initialize()
-    console.log(index.task1)
+    console.log(index.currentTask)
 
 }
+
 
 

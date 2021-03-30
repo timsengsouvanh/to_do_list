@@ -26,7 +26,7 @@ export function createDelete(obj){
     let deletebtn = document.createElement('button')
     deletebtn.innerHTML = '&times;'
     deletebtn.classList.add('delete-btn')
-    deletebtn.setAttribute('data', (index1.task1.indexOf(obj)))
+    deletebtn.setAttribute('data', (index1.currentTask.indexOf(obj)))
 
     return deletebtn
 }

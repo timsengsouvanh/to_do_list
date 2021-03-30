@@ -8,6 +8,8 @@ export let task1 = [
 
 ];
 
+export let currentTask = task1
+
 function addEventListenersinitial(){
     let delbtn = document.querySelectorAll('.delete-btn')
     delbtn.forEach(element => {
@@ -21,11 +23,11 @@ function addEventListenersinitial(){
    let checkbox = document.querySelectorAll('.checkbox')
    checkbox.forEach(element => {
        element.addEventListener('change', () => {
-        let hello = element.closest('.check-task-area') 
+        let checktask = element.closest('.check-task-area') 
         if (element.checked){
-           hello.classList.add('completed-item')    
+           checktask.classList.add('completed-item')    
            }
-        else hello.classList.remove('completed-item') 
+        else checktask.classList.remove('completed-item') 
        })
    })
 }
@@ -33,6 +35,7 @@ function addEventListenersinitial(){
 function addEventListenerAddButton(){
     let addbtn = document.querySelector('#addbtn')
     addbtn.addEventListener('click', () => {
+        //stops users from adding new tasks before commiting on current potential task
         if (document.getElementById('textinput') === null){
         dom.createPotentialTask()
         addEventListenerAddTask()
@@ -48,7 +51,7 @@ function addEventListenerAddTask(){
 }
 
 export function initialize(){
-    task1.forEach(element => {
+    currentTask.forEach(element => {
     dom.displayTasks(element)
 })
 addEventListenersinitial()
