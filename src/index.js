@@ -1,14 +1,14 @@
 import * as todologic from './todologic'
 import * as dom from './dom'
 
-export let task1 = [
+export let personal = [
     todologic.task('study programming', 'study a lot please', 'tomorrow', 'high priority'),
     todologic.task('study japanese', 'study a lot please', 'tomorrow', 'high priority'),
     todologic.task('watch anime', 'study a lot please', 'tomorrow', 'high priority'),
 
 ];
 
-export let currentTask = task1
+export let currentTask = personal
 
 function addEventListenersinitial(){
     let delbtn = document.querySelectorAll('.delete-btn')
@@ -62,4 +62,4 @@ addEventListenerAddButton()
 
 
 
-console.log(task1)
+console.log(personal)
