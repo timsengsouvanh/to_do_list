@@ -29,6 +29,7 @@ function addEventListenersinitial(){
             todologic.removeTask(element)
             todologic.clear()
             initialize()
+            addEventListeners()
         }
             )
     })
