@@ -1,14 +1,26 @@
 import * as todologic from './todologic'
 import * as dom from './dom'
 
+
 export let personal = [
-    todologic.task('study programming', 'study a lot please', 'tomorrow', 'high priority'),
+    todologic.task('study programming', 'study a lot please', 'tomorrow', 'high priority', 'Personal',),
     todologic.task('study japanese', 'study a lot please', 'tomorrow', 'high priority'),
     todologic.task('watch anime', 'study a lot please', 'tomorrow', 'high priority'),
 
 ];
 
-export let currentTask = personal
+export let work = [
+    todologic.task('teach','','','','Work',),
+    todologic.task('PPP')
+];
+
+export let projects = [
+    personal,
+    work,
+]
+
+
+export let currentProject = projects[0]
 
 function addEventListenersinitial(){
     let delbtn = document.querySelectorAll('.delete-btn')
@@ -50,16 +62,38 @@ function addEventListenerAddTask(){
     })
 }
 
+function addEventListenerSwitchProject(){
+    let projectbtn = document.querySelectorAll('.project-item')
+    projectbtn.forEach(element => {
+        element.addEventListener('click', () => {
+           todologic.clear() 
+           todologic.switchProject(element)
+            initialize()
+            addEventListeners()
+        })
+            
+        })
+    }
+
+
 export function initialize(){
-    currentTask.forEach(element => {
+    currentProject.forEach(element => {
     dom.displayTasks(element)
 })
+    projects.forEach(element => {
+    dom.createProject(element)
+    })
+
+}
+export function addEventListeners(){
 addEventListenersinitial()
+addEventListenerAddButton()
+addEventListenerSwitchProject()
 }
 
+// dom.createProject('personal')
+// dom.createProject('work')
 initialize()
-addEventListenerAddButton()
+addEventListeners()
 
 
-
-console.log(personal)

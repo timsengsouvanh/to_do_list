@@ -1,6 +1,21 @@
 import * as index1 from "./index"
 import * as todologic from "./todologic"
 
+export function createProject(element){
+    let projectarea = document.querySelector('#projects')
+    let projects = document.createElement('div')
+    projects.setAttribute('data', index1.projects.indexOf(element))
+    projects.classList.add('project-item')
+    projects.innerText = element[0].project
+    projectarea.appendChild(projects)
+}
+
+// export function displayProjects(element){
+//     let projectarea = document.querySelector('#projects')
+//     let project = createProject(element.name)
+//     projectarea.appendChild(project)
+// }
+
 function createTaskMain(){
     let taskMain = document.createElement('div')
     taskMain.classList.add('task-item')
@@ -26,7 +41,7 @@ export function createDelete(obj){
     let deletebtn = document.createElement('button')
     deletebtn.innerHTML = '&times;'
     deletebtn.classList.add('delete-btn')
-    deletebtn.setAttribute('data', (index1.currentTask.indexOf(obj)))
+    deletebtn.setAttribute('data', (index1.currentProject.indexOf(obj)))
 
     return deletebtn
 }
