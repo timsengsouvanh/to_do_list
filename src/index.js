@@ -83,9 +83,9 @@ export function initialize(){
     currentProject.task.forEach(task => {
     dom.displayTasks(task)
 })
-    // projects.forEach(element => {
-    // dom.createProject(element)
-    // })
+    projects.forEach(project => {
+    dom.displayProjects(project)
+    })
 
 }
 export function addEventListeners(){

@@ -1,20 +1,19 @@
 import * as index1 from "./index"
 import * as todologic from "./todologic"
 
-// export function createProject(element){
-//     let projectarea = document.querySelector('#projects')
-//     let projects = document.createElement('div')
-//     projects.setAttribute('data', index1.projects.indexOf(element))
-//     projects.classList.add('project-item')
-//     projects.innerText = element.name
-//     projectarea.appendChild(projects)
-// }
+export function createProject(project){
+    let projects = document.createElement('div')
+    projects.setAttribute('data', index1.projects.indexOf(project))
+    projects.classList.add('project-item')
+    projects.innerText = project.name
+    return projects
+}
 
-// export function displayProjects(element){
-//     let projectarea = document.querySelector('#projects')
-//     let project = createProject(element.name)
-//     projectarea.appendChild(project)
-// }
+export function displayProjects(element){
+    let projectarea = document.querySelector('#projects')
+    let project = createProject(element)
+    projectarea.appendChild(project)
+}
 
 function createTaskMain(){
     let taskMain = document.createElement('div')
