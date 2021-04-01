@@ -33,6 +33,17 @@ export function addTask(){
 
 }
 
+export function addProject(){
+    let title = document.getElementById('textinput')
+    let newproject = project(title.value, [])
+    index.projects.push(newproject)
+    clear()
+    index.initialize()
+    index.addEventListeners()
+    console.log(index.projects)
+
+}
+
 export function switchProject(target){
     let num = target.getAttribute('data')
     let arrind = parseInt(num)

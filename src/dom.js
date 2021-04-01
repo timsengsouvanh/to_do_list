@@ -1,20 +1,6 @@
 import * as index1 from "./index"
 import * as todologic from "./todologic"
 
-export function createProject(project){
-    let projects = document.createElement('div')
-    projects.setAttribute('data', index1.projects.indexOf(project))
-    projects.classList.add('project-item')
-    projects.innerText = project.name
-    return projects
-}
-
-export function displayProjects(element){
-    let projectarea = document.querySelector('#projects')
-    let project = createProject(element)
-    projectarea.appendChild(project)
-}
-
 function createTaskMain(){
     let taskMain = document.createElement('div')
     taskMain.classList.add('task-item')
@@ -116,5 +102,49 @@ export function createPotentialTask(){
         task.remove()
     })
     div.appendChild(deletebtn)
+}
+
+export function createProject(project){
+    let projects = document.createElement('div')
+    projects.setAttribute('data', index1.projects.indexOf(project))
+    projects.classList.add('project-item')
+    projects.innerText = project.name
+    return projects
+}
+
+export function displayProjects(element){
+    let projectarea = document.querySelector('#projects')
+    let projectmain = createProjectMain()
+    projectarea.appendChild(projectmain)
+
+    let project = createProject(element)
+    projectmain.appendChild(project)
+}
+
+function createProjectMain(){
+    let projectMain = document.createElement('div')
+    projectMain.classList.add('project-container')
+    projectMain.classList.add('flex-area')
+    return projectMain
+}
+
+export function createPotentialProject(){
+    let projectarea = document.querySelector('#projects')
+    let project = createProjectMain()
+    projectarea.appendChild(project)
+
+    let titleInput = createTitleInput()
+    project.appendChild(titleInput)
+
+    let checkmark = createConfirmNewTask()
+    checkmark.classList.add('margin')
+    project.appendChild(checkmark)
+
+    let deletebtn = createDelete()
+    deletebtn.classList.add('margin')
+    deletebtn.addEventListener('click', () => {
+        project.remove()
+    })
+    project.appendChild(deletebtn)
 }
 

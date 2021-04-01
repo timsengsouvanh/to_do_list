@@ -56,12 +56,27 @@ function addEventListenerAddButton(){
         addEventListenerAddTask()
         }
     })
+    let addbtnproj = document.querySelector('#addbtnproj')
+    addbtnproj.addEventListener('click', () => {
+        //stops users from adding new tasks before commiting on current potential task
+        if (document.getElementById('textinput') === null){
+        dom.createPotentialProject()
+        // addEventListenerAddProj()
+        
+        }
+    })
 }
 
 function addEventListenerAddTask(){
     let confirmbtn = document.querySelector('.confirm')
     confirmbtn.addEventListener('click', () => {
         todologic.addTask()
+    })
+}
+function addEventListenerAddProj(){
+    let confirmbtn = document.querySelector('.confirm')
+    confirmbtn.addEventListener('click', () => {
+        todologic.addProject()
     })
 }
 
