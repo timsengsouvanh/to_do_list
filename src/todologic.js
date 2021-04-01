@@ -1,14 +1,18 @@
 import * as index from './index'
 import * as dom from './dom'
 
+export const project = (name, task) => {
+    return {name, task}
+}
+
 export const task = (name, description, duedate, priority, project) => {
     return {name, description, duedate, priority, project}
 }
 
 export function removeTask(target){
     let data = target.getAttribute('data')
-    index.currentProject.splice(data, 1)
-    console.log(index.currentProject)
+    index.currentProject.task.splice(data, 1)
+    console.log(index.currentProject.task)
 }
 
 export function clear(){
@@ -21,11 +25,11 @@ export function clear(){
 export function addTask(){
     let title = document.getElementById('textinput')
     let newtask = task(title.value)
-    index.currentProject.push(newtask)
+    index.currentProject.task.push(newtask)
     clear()
     index.initialize()
     index.addEventListeners()
-    console.log(index.currentProject)
+    console.log(index.currentProject.task)
 
 }
 

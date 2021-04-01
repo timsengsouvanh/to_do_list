@@ -15,9 +15,11 @@ export let work = [
 ];
 
 export let projects = [
-    personal,
-    work,
-]
+    todologic.project('Personal', personal),
+    todologic.project('Work', work),
+    // personal,
+    // work,
+];
 
 
 export let currentProject = projects[0]
@@ -78,12 +80,12 @@ function addEventListenerSwitchProject(){
 
 
 export function initialize(){
-    currentProject.forEach(element => {
-    dom.displayTasks(element)
+    currentProject.task.forEach(task => {
+    dom.displayTasks(task)
 })
-    projects.forEach(element => {
-    dom.createProject(element)
-    })
+    // projects.forEach(element => {
+    // dom.createProject(element)
+    // })
 
 }
 export function addEventListeners(){
