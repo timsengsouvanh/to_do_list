@@ -35,7 +35,7 @@ button {
     gap: 2rem;
 }
 
-#projects {
+#project-area {
     /* background-color: green; */
     height: 100%;
     flex: 1;
@@ -44,10 +44,16 @@ button {
     border-right: 3px solid black;
 }
 
-.project-item {
+.project-container {
+    display: flex;
+    justify-content: center;
     padding: 2rem 2rem;
     border-top: 1px solid white;
     border-bottom: 1px solid white;
+}
+
+.project-item {
+    
 }
 
 #task-area{
@@ -58,7 +64,7 @@ button {
     padding-top: 1rem; 
 }
 
-#addbtn {
+#addbtn, #addbtnproj {
     font-size: 1rem;
     padding: .5rem .75rem;
     background-color: rgb(255, 255, 255);
