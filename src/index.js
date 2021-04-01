@@ -61,7 +61,7 @@ function addEventListenerAddButton(){
         //stops users from adding new tasks before commiting on current potential task
         if (document.getElementById('textinput') === null){
         dom.createPotentialProject()
-        // addEventListenerAddProj()
+        addEventListenerAddProj()
         
         }
     })

@@ -128,23 +128,39 @@ function createProjectMain(){
     return projectMain
 }
 
+function createProjectCheckArea(){
+    let projectCheckArea = document.createElement('div')
+    projectCheckArea.classList.add('project-check-area')
+    return projectCheckArea
+}
+
+function createProjectConfirmDeleteArea(){
+    let projectConfirmDeleteArea = document.createElement('div')
+    projectConfirmDeleteArea.classList.add('project-confirm-delete-area')
+    return projectConfirmDeleteArea
+}
+
 export function createPotentialProject(){
     let projectarea = document.querySelector('#projects')
     let project = createProjectMain()
     projectarea.appendChild(project)
 
+    let projectCheckArea = createProjectCheckArea()
+    project.appendChild(projectCheckArea)
+
     let titleInput = createTitleInput()
-    project.appendChild(titleInput)
+    projectCheckArea.appendChild(titleInput)
+
+    let projectConfirmDeleteArea = createProjectConfirmDeleteArea()
+    projectCheckArea.appendChild(projectConfirmDeleteArea)
 
     let checkmark = createConfirmNewTask()
-    checkmark.classList.add('margin')
-    project.appendChild(checkmark)
+    projectConfirmDeleteArea.appendChild(checkmark)
 
     let deletebtn = createDelete()
-    deletebtn.classList.add('margin')
     deletebtn.addEventListener('click', () => {
         project.remove()
     })
-    project.appendChild(deletebtn)
+    projectConfirmDeleteArea.appendChild(deletebtn)
 }
 

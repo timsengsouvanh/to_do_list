@@ -52,6 +52,17 @@ button {
     border-bottom: 1px solid white;
 }
 
+.project-check-area{
+    display: flex;
+    flex-direction: column;
+}
+
+.project-confirm-delete-area{
+    padding-top: 1rem;
+    display: flex;
+    justify-content: space-around;
+}
+
 .project-item {
     
 }
