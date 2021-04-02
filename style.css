@@ -14,8 +14,12 @@ header {
 .margin {
     margin-left: 2rem;
 }
+.margin-desc {
+    margin-left: 3.23rem;
+}
 
 button {
+    display: inline-block;
     text-decoration: none;
     border: none;
     outline: none;
@@ -33,6 +37,7 @@ button {
 
 .check-task-area {
     gap: 2rem;
+    cursor: pointer;
 }
 
 #project-area {
@@ -50,6 +55,7 @@ button {
     padding: 2rem 2rem;
     border-top: 1px solid white;
     border-bottom: 1px solid white;
+    cursor: pointer;
 }
 
 .project-check-area{
@@ -83,9 +89,9 @@ button {
     border-radius: 5px;
 }
 
-.task-item {
+.task-container {
+    flex-direction: column;
     padding: 1rem 4rem;
-    justify-content: space-between;
 }
 
 #crudbtn{
@@ -97,4 +103,14 @@ button {
 .completed-item{
     text-decoration: line-through;
     color: rgb(148, 148, 148);
+}
+
+.description-container {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1rem;
+}
+
+.description-item{
+    font-size: .8rem;
 }
