@@ -3,15 +3,15 @@ import * as dom from './dom'
 
 
 export let personal = [
-    todologic.task('study programming', 'study a lot please', 'tomorrow', 'high priority', 'Personal',),
-    todologic.task('study japanese', 'study a lot please', 'tomorrow', 'high priority'),
-    todologic.task('watch anime', 'study a lot please', 'tomorrow', 'high priority'),
+    todologic.task('study programming', 'study everyday and continue doing this project', 'tomorrow', 'high priority', 'Personal',),
+    todologic.task('study japanese', 'do anki and all the reviews, try to listen to all sentences', 'tomorrow', 'high priority'),
+    todologic.task('watch anime', 'watch evangelion, and later watch cowboy bebop', 'tomorrow', 'high priority'),
 
 ];
 
 export let work = [
-    todologic.task('teach','','','','Work',),
-    todologic.task('PPP')
+    todologic.task('Teach','Teach all lessons and assign homework','','','Work',),
+    todologic.task('PPP', 'Do not forget to use YNOK and do a lot of practice with students')
 ];
 
 export let projects = [
@@ -45,6 +45,13 @@ function addEventListenersinitial(){
         else checktask.classList.remove('completed-item') 
        })
    })
+
+//    let tasklist = document.querySelectorAll('.task')
+//    tasklist.forEach(task => {
+//     task.addEventListener('click', () => {
+//         alert(todologic.task)
+//     })
+//    })
 }
 
 function addEventListenerAddButton(){
@@ -113,5 +120,6 @@ addEventListenerSwitchProject()
 // dom.createProject('work')
 initialize()
 addEventListeners()
+
 
 

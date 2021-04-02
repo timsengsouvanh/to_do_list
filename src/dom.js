@@ -3,7 +3,7 @@ import * as todologic from "./todologic"
 
 function createTaskMain(){
     let taskMain = document.createElement('div')
-    taskMain.classList.add('task-item')
+    taskMain.classList.add('task-container')
     taskMain.classList.add('flex-area')
     return taskMain
 }
@@ -15,11 +15,19 @@ function createCheckTaskArea(){
     return checkTaskArea
 }
 
-function createTask(name){
+function createTask(obj){
     let task = document.createElement('div')
-    task.setAttribute('id', name)
-    task.innerText = name
+    task.classList.add('task')
+    task.innerText = obj.name
     return task
+}
+
+function createDescription(obj){
+    let description = document.createElement('div')
+    description.classList.add('description-item')
+    description.classList.add('margin-desc')
+    description.innerText = obj.description
+    return description
 }
 
 export function createDelete(obj){
@@ -38,22 +46,43 @@ function createCheckbox(){
     return checkbox
 }
 
+function createTitleArea(){
+    let title = document.createElement('div')
+    return title
+}
+
+function createDescriptionArea(){
+    let desc = document.createElement('div')
+    desc.classList.add('description-container')
+    return desc
+}
+
 export function displayTasks(obj){
     let taskarea = document.querySelector('#tasks')
     let task = createTaskMain()
     taskarea.appendChild(task)
 
+    let titlearea = createTitleArea()
+    task.appendChild(titlearea)
+
     let taskCheckArea = createCheckTaskArea()
-    task.appendChild(taskCheckArea)
+    titlearea.appendChild(taskCheckArea)
 
     let checkbox = createCheckbox()
     taskCheckArea.appendChild(checkbox)
 
-    let taskName = createTask(obj.name)
+    let taskName = createTask(obj)
     taskCheckArea.appendChild(taskName)
 
+    let desc = createDescriptionArea()
+    task.appendChild(desc)
+
+    let description = createDescription(obj)
+    desc.appendChild(description)    
+    
     let deletebtn = createDelete(obj)
-    task.appendChild(deletebtn)
+    desc.appendChild(deletebtn)
+
 }
 
 function createTitleInput(){
@@ -102,6 +131,19 @@ export function createPotentialTask(){
         task.remove()
     })
     div.appendChild(deletebtn)
+}
+
+// export function createDescription(obj){
+//     let descriptiondiv = document.createElement('div')
+//     descriptiondiv.innerText = obj.description
+//     return descriptiondiv
+// }
+
+export function createDetails(obj){
+    let taskcontainer = document.query
+    let descriptiondiv = createDescription(obj)
+    taskcontainer.appendChild(descriptiondiv)
+
 }
 
 export function createProject(project){
