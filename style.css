@@ -40,6 +40,19 @@ button {
     cursor: pointer;
 }
 
+.title-area{
+    display: flex;
+    justify-content: space-between;
+}
+
+.date {
+    font-size: .8rem;
+}
+
+.checkbox {
+    border-radius: 100%;
+}
+
 #project-area {
     /* background-color: green; */
     height: 100%;
