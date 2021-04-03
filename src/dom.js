@@ -48,7 +48,15 @@ function createCheckbox(){
 
 function createTitleArea(){
     let title = document.createElement('div')
+    title.classList.add('title-area')
     return title
+}
+
+function createDate(obj){
+    let date = document.createElement('div')
+    date.classList.add('date')
+    date.innerText = obj.duedate
+    return date
 }
 
 function createDescriptionArea(){
@@ -67,6 +75,9 @@ export function displayTasks(obj){
 
     let taskCheckArea = createCheckTaskArea()
     titlearea.appendChild(taskCheckArea)
+
+    let date = createDate(obj)
+    titlearea.appendChild(date)
 
     let checkbox = createCheckbox()
     taskCheckArea.appendChild(checkbox)

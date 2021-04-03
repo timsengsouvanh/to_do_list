@@ -3,22 +3,20 @@ import * as dom from './dom'
 
 
 export let personal = [
-    todologic.task('study programming', 'study everyday and continue doing this project', 'tomorrow', 'high priority', 'Personal',),
-    todologic.task('study japanese', 'do anki and all the reviews, try to listen to all sentences', 'tomorrow', 'high priority'),
-    todologic.task('watch anime', 'watch evangelion, and later watch cowboy bebop', 'tomorrow', 'high priority'),
+    todologic.task('study programming', 'study everyday and continue doing this project', '10/04/2021', 'high priority', 'Personal',),
+    todologic.task('study japanese', 'do anki and all the reviews, try to listen to all sentences', '20/04/2021', 'high priority'),
+    todologic.task('watch anime', 'watch evangelion, and later watch cowboy bebop', '31/06/2021', 'high priority'),
 
 ];
 
 export let work = [
-    todologic.task('Teach','Teach all lessons and assign homework','','','Work',),
-    todologic.task('PPP', 'Do not forget to use YNOK and do a lot of practice with students')
+    todologic.task('Teach','Teach all lessons and assign homework','30/12/2021','','Work',),
+    todologic.task('PPP', 'Do not forget to use YNOK and do a lot of practice with students', '24/12/21')
 ];
 
 export let projects = [
     todologic.project('Personal', personal),
     todologic.project('Work', work),
-    // personal,
-    // work,
 ];
 
 
@@ -38,7 +36,7 @@ function addEventListenersinitial(){
    let checkbox = document.querySelectorAll('.checkbox')
    checkbox.forEach(element => {
        element.addEventListener('change', () => {
-        let checktask = element.closest('.check-task-area') 
+        let checktask = element.closest('.title-area') 
         if (element.checked){
            checktask.classList.add('completed-item')    
            }
