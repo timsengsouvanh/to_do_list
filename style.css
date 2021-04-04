@@ -117,6 +117,8 @@ button {
 }
 
 .potential-second-line {
+    display: flex;
+    justify-content: space-between;
     margin-left: 3.25rem;
     padding-top: 1.3rem;
 }
