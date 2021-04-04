@@ -107,6 +107,20 @@ button {
     padding: 1rem 4rem;
 }
 
+.potential-task-container {
+    flex-direction: column;
+}
+.potential-first-line {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.potential-second-line {
+    margin-left: 3.25rem;
+    padding-top: 1.3rem;
+}
+
 #crudbtn{
     padding: .5rem 4rem;
     display: flex;
