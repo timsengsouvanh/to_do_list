@@ -25,7 +25,8 @@ export function clear(){
 export function addTask(){
     let title = document.getElementById('textinput')
     let description = document.getElementById('description-input')
-    let newtask = task(title.value, description.value)
+    let date = document.getElementById('date-input')
+    let newtask = task(title.value, description.value, date.value)
     index.currentProject.task.push(newtask)
     clear()
     index.initialize()

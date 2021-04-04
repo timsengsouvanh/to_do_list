@@ -145,6 +145,13 @@ function createPotentialSecondLine(){
     return secondLine
 }
 
+function createPotentialDate(){
+    let date = document.createElement('input')
+    date.setAttribute('type', 'date')
+    date.setAttribute('id', 'date-input')
+    return date
+}
+
 export function createPotentialTask(){
     let taskarea = document.querySelector('#tasks')
     let task = createTaskMain()
@@ -182,6 +189,9 @@ export function createPotentialTask(){
 
     let descriptionInput = createDescriptionInput()
     secondLine.appendChild(descriptionInput)
+
+    let dateinput = createPotentialDate()
+    secondLine.appendChild(dateinput)
 }
 
 // export function createDescription(obj){

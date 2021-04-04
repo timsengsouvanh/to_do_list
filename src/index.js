@@ -3,15 +3,15 @@ import * as dom from './dom'
 
 
 export let personal = [
-    todologic.task('study programming', 'study everyday and continue doing this project', '10/04/2021', 'high priority', 'Personal',),
-    todologic.task('study japanese', 'do anki and all the reviews, try to listen to all sentences', '20/04/2021', 'high priority'),
-    todologic.task('watch anime', 'watch evangelion, and later watch cowboy bebop', '31/06/2021', 'high priority'),
+    todologic.task('study programming', 'study everyday and continue doing this project', '2021-04-21', 'high priority', 'Personal',),
+    todologic.task('study japanese', 'do anki and all the reviews, try to listen to all sentences', '2021-08-19', 'high priority'),
+    todologic.task('watch anime', 'watch evangelion, and later watch cowboy bebop', '2021-10-11', 'high priority'),
 
 ];
 
 export let work = [
-    todologic.task('Teach','Teach all lessons and assign homework','30/12/2021','','Work',),
-    todologic.task('PPP', 'Do not forget to use YNOK and do a lot of practice with students', '24/12/21')
+    todologic.task('Teach','Teach all lessons and assign homework','2021-06-09','','Work',),
+    todologic.task('PPP', 'Do not forget to use YNOK and do a lot of practice with students', '2021-08-22')
 ];
 
 export let projects = [
