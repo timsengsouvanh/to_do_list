@@ -117,11 +117,20 @@ export function displayTasks(obj){
 
 }
 
-export function createTaskTitleInput(){
+export function createTaskTitleInput(obj){
     let titleInput = document.createElement('input')
     titleInput.setAttribute('type', 'text')
     titleInput.setAttribute('id', 'textinput')
     titleInput.setAttribute('placeholder', 'Task')
+    
+    return titleInput
+}
+export function createTaskEditTitleInput(obj){
+    let titleInput = document.createElement('input')
+    titleInput.setAttribute('type', 'text')
+    titleInput.setAttribute('id', 'textinput')
+    titleInput.setAttribute('value', obj.name)
+    
     return titleInput
 }
 
@@ -130,6 +139,13 @@ export function createDescriptionInput(){
     titleInput.setAttribute('type', 'text')
     titleInput.setAttribute('id', 'description-input')
     titleInput.setAttribute('placeholder', 'Description')
+    return titleInput
+}
+export function createDescriptionEditInput(obj){
+    let titleInput = document.createElement('input')
+    titleInput.setAttribute('type', 'text')
+    titleInput.setAttribute('id', 'description-input')
+    titleInput.setAttribute('value', obj.description)
     return titleInput
 }
 
@@ -170,6 +186,13 @@ export function createPotentialDate(){
     let date = document.createElement('input')
     date.setAttribute('type', 'date')
     date.setAttribute('id', 'date-input')
+    return date
+}
+export function createPotentialEditDate(obj){
+    let date = document.createElement('input')
+    date.setAttribute('type', 'date')
+    date.setAttribute('id', 'date-input')
+    date.setAttribute('value', obj.duedate)
     return date
 }
 
@@ -228,7 +251,7 @@ export function createEditTask(obj){
     let checkbox = createCheckbox()
     taskCheckArea.appendChild(checkbox)
 
-    let titleInput = createTaskTitleInput()
+    let titleInput = createTaskEditTitleInput(obj)
     taskCheckArea.appendChild(titleInput)
 
     let btndiv = createPotentialBtnDiv()
@@ -249,10 +272,10 @@ export function createEditTask(obj){
     let secondLine = createPotentialSecondLine()
     task.appendChild(secondLine)
 
-    let descriptionInput = createDescriptionInput()
+    let descriptionInput = createDescriptionEditInput(obj)
     secondLine.appendChild(descriptionInput)
 
-    let dateinput = createPotentialDate()
+    let dateinput = createPotentialEditDate(obj)
     secondLine.appendChild(dateinput)
 
     return task
