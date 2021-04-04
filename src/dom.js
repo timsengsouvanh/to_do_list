@@ -96,10 +96,27 @@ export function displayTasks(obj){
 
 }
 
-function createTitleInput(){
+function createTaskTitleInput(){
     let titleInput = document.createElement('input')
     titleInput.setAttribute('type', 'text')
     titleInput.setAttribute('id', 'textinput')
+    titleInput.setAttribute('placeholder', 'Task')
+    return titleInput
+}
+
+function createDescriptionInput(){
+    let titleInput = document.createElement('input')
+    titleInput.setAttribute('type', 'text')
+    titleInput.setAttribute('id', 'description-input')
+    titleInput.setAttribute('placeholder', 'Description')
+    return titleInput
+}
+
+function createProjectTitleInput(){
+    let titleInput = document.createElement('input')
+    titleInput.setAttribute('type', 'text')
+    titleInput.setAttribute('id', 'textinput')
+    titleInput.setAttribute('placeholder', 'Project Name')
     return titleInput
 }
 
@@ -110,38 +127,61 @@ function createConfirmNewTask(){
     return confirmnewtask
 }
 
-function creatediv(){
+function createPotentialBtnDiv(){
     let btnarea = document.createElement('div')
+    btnarea.classList.add('potential-btn-area')
     return btnarea
+}
+
+function createPotentialFirstLine(){
+    let firstLine = document.createElement('div')
+    firstLine.classList.add('potential-first-line')
+    return firstLine
+}
+
+function createPotentialSecondLine(){
+    let secondLine = document.createElement('div')
+    secondLine.classList.add('potential-second-line')
+    return secondLine
 }
 
 export function createPotentialTask(){
     let taskarea = document.querySelector('#tasks')
     let task = createTaskMain()
+    task.classList.add('potential-task-container')
     taskarea.appendChild(task)
 
+    let firstLine = createPotentialFirstLine()
+    task.appendChild(firstLine)
+
     let taskCheckArea = createCheckTaskArea()
-    task.appendChild(taskCheckArea)
+    firstLine.appendChild(taskCheckArea)
 
     let checkbox = createCheckbox()
     taskCheckArea.appendChild(checkbox)
 
-    let titleInput = createTitleInput()
+    let titleInput = createTaskTitleInput()
     taskCheckArea.appendChild(titleInput)
 
-    let div = creatediv()
-    task.appendChild(div)
+    let btndiv = createPotentialBtnDiv()
+    firstLine.appendChild(btndiv)
 
     let checkmark = createConfirmNewTask()
     checkmark.classList.add('margin')
-    div.appendChild(checkmark)
+    btndiv.appendChild(checkmark)
 
     let deletebtn = createDelete()
     deletebtn.classList.add('margin')
     deletebtn.addEventListener('click', () => {
         task.remove()
     })
-    div.appendChild(deletebtn)
+    btndiv.appendChild(deletebtn)
+
+    let secondLine = createPotentialSecondLine()
+    task.appendChild(secondLine)
+
+    let descriptionInput = createDescriptionInput()
+    secondLine.appendChild(descriptionInput)
 }
 
 // export function createDescription(obj){
@@ -202,7 +242,7 @@ export function createPotentialProject(){
     let projectCheckArea = createProjectCheckArea()
     project.appendChild(projectCheckArea)
 
-    let titleInput = createTitleInput()
+    let titleInput = createProjectTitleInput()
     projectCheckArea.appendChild(titleInput)
 
     let projectConfirmDeleteArea = createProjectConfirmDeleteArea()

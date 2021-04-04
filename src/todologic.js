@@ -24,13 +24,13 @@ export function clear(){
 
 export function addTask(){
     let title = document.getElementById('textinput')
-    let newtask = task(title.value)
+    let description = document.getElementById('description-input')
+    let newtask = task(title.value, description.value)
     index.currentProject.task.push(newtask)
     clear()
     index.initialize()
     index.addEventListeners()
     console.log(index.currentProject.task)
-
 }
 
 export function addProject(){
