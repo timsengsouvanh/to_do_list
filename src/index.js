@@ -33,6 +33,23 @@ function addEventListenersinitial(){
         }
             )
     })
+    let editbtn = document.querySelectorAll('.edit-btn')
+    editbtn.forEach(element => {
+        element.addEventListener('click', () => {
+            let data = element.getAttribute('data')
+            let obj = currentProject.task[data]
+            
+
+            let taskarea = document.querySelector('#tasks')
+            let desc = element.closest('.task-container')
+            let potential = dom.createEditTask(obj)
+            desc.replaceWith(potential)
+            addEventListenerConfirmReplace(obj)
+
+
+        }
+            )
+    })
    let checkbox = document.querySelectorAll('.checkbox')
    checkbox.forEach(element => {
        element.addEventListener('change', () => {
@@ -76,6 +93,13 @@ function addEventListenerAddTask(){
     let confirmbtn = document.querySelector('.confirm')
     confirmbtn.addEventListener('click', () => {
         todologic.addTask()
+    })
+}
+
+function addEventListenerConfirmReplace(obj){
+    let confirmbtn = document.querySelector('#new-check')
+    confirmbtn.addEventListener('click', () => {
+        todologic.replaceTask(obj)
     })
 }
 function addEventListenerAddProj(){

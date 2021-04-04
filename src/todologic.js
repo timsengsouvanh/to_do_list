@@ -33,6 +33,18 @@ export function addTask(){
     index.addEventListeners()
     console.log(index.currentProject.task)
 }
+export function replaceTask(obj){
+    let title = document.getElementById('textinput')
+    let description = document.getElementById('description-input')
+    let date = document.getElementById('date-input')
+    obj.name = title.value
+    obj.description = description.value
+    obj.date = date.value
+    clear()
+    index.initialize()
+    index.addEventListeners()
+    console.log(index.currentProject.task)
+}
 
 export function addProject(){
     let title = document.getElementById('textinput')
