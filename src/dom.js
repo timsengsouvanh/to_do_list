@@ -167,17 +167,18 @@ export function createProject(project){
 
 export function displayProjects(element){
     let projectarea = document.querySelector('#projects')
-    let projectmain = createProjectMain()
+    let projectmain = createProjectMain(element)
     projectarea.appendChild(projectmain)
 
     let project = createProject(element)
     projectmain.appendChild(project)
 }
 
-function createProjectMain(){
+function createProjectMain(project){
     let projectMain = document.createElement('div')
     projectMain.classList.add('project-container')
     projectMain.classList.add('flex-area')
+    projectMain.setAttribute('data', index1.projects.indexOf(project))
     return projectMain
 }
 
