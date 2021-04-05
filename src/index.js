@@ -61,12 +61,16 @@ function addEventListenersinitial(){
        })
    })
 
-//    let tasklist = document.querySelectorAll('.task')
-//    tasklist.forEach(task => {
-//     task.addEventListener('click', () => {
-//         alert(todologic.task)
-//     })
-//    })
+   let tasklist = document.querySelectorAll('.title-area')
+   tasklist.forEach(task => {
+    task.addEventListener('click', () => {
+        let desc = task.nextElementSibling;
+        if (desc.style.maxHeight){
+            desc.style.maxHeight = null;
+        }
+        else desc.style.maxHeight = desc.scrollHeight + 'px';
+    })
+   })
 }
 
 function addEventListenerAddButton(){

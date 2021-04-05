@@ -26,7 +26,7 @@ export function createDescription(obj){
     let description = document.createElement('div')
     description.classList.add('description-item')
     description.classList.add('margin-desc')
-    description.innerText = obj.description
+    description.innerText = 'notes: '+ obj.description
     return description
 }
 
