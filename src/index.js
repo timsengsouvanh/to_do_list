@@ -60,11 +60,13 @@ function addEventListenersinitial(){
         else checktask.classList.remove('completed-item') 
        })
    })
-
-   let tasklist = document.querySelectorAll('.title-area')
+   //collapsible description
+   let tasklist = document.querySelectorAll('.task')
    tasklist.forEach(task => {
     task.addEventListener('click', () => {
-        let desc = task.nextElementSibling;
+        let parent1 = task.parentNode;
+        let parent2 = parent1.parentNode;
+        let desc = parent2.nextSibling;
         if (desc.style.maxHeight){
             desc.style.maxHeight = null;
         }
