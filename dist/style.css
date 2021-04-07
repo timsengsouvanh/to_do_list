@@ -15,7 +15,7 @@ header {
     margin-left: 2rem;
 }
 .margin-desc {
-    margin-left: 3.23rem;
+    margin-left: 6.5rem;
 }
 
 button {
@@ -37,7 +37,6 @@ button {
 
 .check-task-area {
     gap: 2rem;
-    cursor: pointer;
 }
 
 .title-area{
@@ -82,16 +81,16 @@ button {
     justify-content: space-around;
 }
 
-.project-item {
-    
-}
-
 #task-area{
     flex: 3;
 }
 
-#tasks {
+#tasks, #priority-tasks {
     padding-top: 1rem; 
+}
+
+.task, .checkbox {
+    cursor: pointer;
 }
 
 #addbtn, #addbtnproj {

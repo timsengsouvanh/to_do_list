@@ -60,6 +60,22 @@ export function createCheckbox(){
     checkbox.classList.add('checkbox')
     return checkbox
 }
+export function createPriorityCheckbox(obj){
+    let checkbox = document.createElement('input')
+    checkbox.setAttribute('type', 'checkbox')
+    checkbox.setAttribute('data', (index1.currentProject.task.indexOf(obj)))
+    checkbox.classList.add('priority-checkbox')
+    return checkbox
+}
+
+export function createPriorityCheckboxHigh(obj){
+    let checkbox = document.createElement('input')
+    checkbox.setAttribute('type', 'checkbox')
+    checkbox.setAttribute('data', (index1.currentProject.prioritytask.indexOf(obj)))
+    checkbox.checked = true
+    checkbox.classList.add('priority-checkbox')
+    return checkbox
+}
 
 export function createTitleArea(){
     let title = document.createElement('div')
@@ -93,6 +109,49 @@ export function displayTasks(obj){
 
     let date = createDate(obj)
     titlearea.appendChild(date)
+
+    let pricheckbox = createPriorityCheckbox(obj)
+    taskCheckArea.appendChild(pricheckbox)
+
+    let checkbox = createCheckbox()
+    taskCheckArea.appendChild(checkbox)
+
+    let taskName = createTask(obj)
+    taskCheckArea.appendChild(taskName)
+
+    let desc = createDescriptionArea()
+    task.appendChild(desc)
+
+    let description = createDescription(obj)
+    desc.appendChild(description)    
+    
+    let deleteEditArea = createDeleteEditArea()
+    desc.appendChild(deleteEditArea)
+
+    let editbtn = createEditbtn(obj)
+    deleteEditArea.appendChild(editbtn)
+
+    let deletebtn = createDelete(obj)
+    deleteEditArea.appendChild(deletebtn)
+
+}
+
+export function displayPriorityTasks(obj){
+    let taskarea = document.querySelector('#priority-tasks')
+    let task = createTaskMain()
+    taskarea.appendChild(task)
+
+    let titlearea = createTitleArea()
+    task.appendChild(titlearea)
+
+    let taskCheckArea = createCheckTaskArea()
+    titlearea.appendChild(taskCheckArea)
+
+    let date = createDate(obj)
+    titlearea.appendChild(date)
+
+    let pricheckbox = createPriorityCheckboxHigh(obj)
+    taskCheckArea.appendChild(pricheckbox)
 
     let checkbox = createCheckbox()
     taskCheckArea.appendChild(checkbox)
@@ -280,12 +339,6 @@ export function createEditTask(obj){
 
     return task
 }
-
-// export function createDescription(obj){
-//     let descriptiondiv = document.createElement('div')
-//     descriptiondiv.innerText = obj.description
-//     return descriptiondiv
-// }
 
 export function createDetails(obj){
     let taskcontainer = document.query

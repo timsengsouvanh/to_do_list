@@ -3,20 +3,24 @@ import * as dom from './dom'
 
 
 export let personal = [
-    todologic.task('study programming', 'study everyday and continue doing this project', '2021-04-21', 'high priority', 'Personal',),
-    todologic.task('study japanese', 'do anki and all the reviews, try to listen to all sentences', '2021-08-19', 'high priority'),
-    todologic.task('watch anime', 'watch evangelion, and later watch cowboy bebop', '2021-10-11', 'high priority'),
+    todologic.task('study programming', 'study everyday and continue doing this project', '2021-04-21'),
+    todologic.task('study japanese', 'do anki and all the reviews, try to listen to all sentences', '2021-08-19'),
+    todologic.task('watch anime', 'watch evangelion, and later watch cowboy bebop', '2021-10-11',),
 
 ];
 
+export let prioritypersonal = [
+    todologic.task('move out', 'need to organize moving out', '2021-04-29')
+]
+
 export let work = [
-    todologic.task('Teach','Teach all lessons and assign homework','2021-06-09','','Work',),
+    todologic.task('Teach','Teach all lessons and assign homework','2021-06-09'),
     todologic.task('PPP', 'Do not forget to use YNOK and do a lot of practice with students', '2021-08-22')
 ];
 
 export let projects = [
-    todologic.project('Personal', personal),
-    todologic.project('Work', work),
+    todologic.project('Personal', prioritypersonal, personal),
+    todologic.project('Work', [], work),
 ];
 
 
@@ -60,6 +64,18 @@ function addEventListenersinitial(){
         else checktask.classList.remove('completed-item') 
        })
    })
+
+   let prioritycheckbox = document.querySelectorAll('.priority-checkbox')
+   prioritycheckbox.forEach(element => {
+       element.addEventListener('change', () => { 
+        if (element.checked){
+           todologic.addHighPriority(element)   
+           }
+        else todologic.removeHighPriority(element)
+        
+       })
+   })
+
    //collapsible description
    let tasklist = document.querySelectorAll('.task')
    tasklist.forEach(task => {
@@ -130,6 +146,9 @@ function addEventListenerSwitchProject(){
 
 
 export function initialize(){
+    currentProject.prioritytask.forEach(task => {
+    dom.displayPriorityTasks(task)
+})
     currentProject.task.forEach(task => {
     dom.displayTasks(task)
 })
