@@ -14,13 +14,16 @@ html, body {
 }
 
 header {
-    /* background-color: pink; */
+    display: flex;
     font-size: 4rem;
     padding: 1rem 3rem;
     border-bottom: 3px solid var(--mid-color);
     font-family: 'Roboto Condensed';
     font-weight: 700;
-    
+}
+
+#orange{
+    color: var(--accent-color)
 }
 
 .margin {
@@ -37,11 +40,13 @@ button {
     border: none;
     outline: none;
     cursor: pointer;
+    background-color: var(--accent-color);
+    color: var(--mid-color);
 }
 
 #main {
     /* background-color: aqua; */
-    height: 80vh;
+    height: 76.5vh;
 }
 
 .flex-area {
@@ -143,7 +148,7 @@ button {
 }
 
 #crudbtnproj {
-    padding: 1rem 1rem;
+    padding: 1.7rem 1rem;
 }
 
 .completed-item{
@@ -172,6 +177,11 @@ button {
 input {
     outline: none;
     border: none;
-    border-bottom: 1px solid black;
-    background-color: var(--main-bg-color)
+    border-bottom: 1px solid var(--mid-color);
+    background-color: var(--main-bg-color);
+    color: var(--mid-color);
+}
+
+::-webkit-calendar-picker-indicator {
+    filter: invert(1);
 }
