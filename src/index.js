@@ -3,9 +3,9 @@ import * as dom from './dom'
 
 
 export let personal = [
-    todologic.task('study programming', 'study everyday and continue doing this project', '2021-04-21', '1'),
-    todologic.task('study japanese', 'do anki and all the reviews, try to listen to all sentences', '2021-08-19', '3'),
-    todologic.task('watch anime', 'watch evangelion, and later watch cowboy bebop', '2021-10-11', '2'),
+    todologic.task('study programming', 'study everyday and continue doing this project', '2021-04-21', 1),
+    todologic.task('study japanese', 'do anki and all the reviews, try to listen to all sentences', '2021-08-19', 3),
+    todologic.task('watch anime', 'watch evangelion, and later watch cowboy bebop', '2021-10-11', 2),
 
 ];
 
@@ -149,7 +149,7 @@ export function initialize(){
     currentProject.prioritytask.forEach(task => {
     dom.displayPriorityTasks(task)
 })
-    let originalSort = currentProject.task.sort((a,b) => a.dateadded>b.dateadded ? -1:1)
+    let originalSort = currentProject.task.sort((a,b) => a.dateadded>b.dateadded ? 1:-1)
     originalSort.forEach(task => {
     dom.displayTasks(task)
 })
