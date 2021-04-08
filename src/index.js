@@ -149,7 +149,16 @@ export function initialize(){
     currentProject.prioritytask.forEach(task => {
     dom.displayPriorityTasks(task)
 })
-    let originalSort = currentProject.task.sort((a,b) => a.duedate>b.duedate ? 1:-1)
+    // let originalSort = currentProject.task.sort((a,b) => a.duedate>b.duedate ? 1:-1)
+    let originalSort = currentProject.task.sort((a,b) => {
+        if(a.duedate == ""){
+            return undefined
+        }
+        else if(a.duedate>b.duedate){
+            return 1
+        }
+        else return -1
+    })
     originalSort.forEach(task => {
     dom.displayTasks(task)
 })
