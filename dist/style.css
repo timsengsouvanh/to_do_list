@@ -1,14 +1,26 @@
+:root {
+    --main-bg-color: #08348C;
+    --mid-color: #F2E3D5;
+    --accent-color: #F27830;
+  }
+
 html, body {
     margin: 0 auto;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 1.1rem;
+    color: var(--mid-color);
+    background-color: var(--main-bg-color)
 }
 
 header {
     /* background-color: pink; */
-    font-size: 3rem;
+    font-size: 4rem;
     padding: 1rem 3rem;
-    border-bottom: 3px solid black;
+    border-bottom: 3px solid var(--mid-color);
+    font-family: 'Roboto Condensed';
+    font-weight: 700;
+    
 }
 
 .margin {
@@ -17,6 +29,7 @@ header {
 .margin-desc {
     margin-left: 6.5rem;
 }
+
 
 button {
     display: inline-block;
@@ -58,15 +71,15 @@ button {
     flex: 1;
     padding-bottom: 2rem;
     text-align: center;
-    border-right: 3px solid black;
+    border-right: 3px solid var(--mid-color);
+    
 }
 
 .project-container {
     display: flex;
     justify-content: center;
     padding: 2rem 2rem;
-    border-top: 1px solid white;
-    border-bottom: 1px solid white;
+    border-bottom: 3px solid var(--mid-color);
     cursor: pointer;
 }
 
@@ -94,11 +107,12 @@ button {
 }
 
 #addbtn, #addbtnproj {
-    font-size: 1rem;
-    padding: .5rem .75rem;
-    background-color: rgb(255, 255, 255);
-    border: 1px solid black;
-    border-radius: 5px;
+    font-size: 2rem;
+    color: var(--mid-color);
+    padding: .4rem 1rem;
+    background-color:var(--accent-color);
+    border: none;
+    border-radius: 50%;
 }
 
 .task-container {
@@ -125,12 +139,16 @@ button {
 #crudbtn{
     padding: .5rem 4rem;
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-end;
+}
+
+#crudbtnproj {
+    padding: 1rem 1rem;
 }
 
 .completed-item{
     text-decoration: line-through;
-    color: rgb(148, 148, 148);
+    color: var(--accent-color)
 }
 
 .description-container {
@@ -155,4 +173,5 @@ input {
     outline: none;
     border: none;
     border-bottom: 1px solid black;
+    background-color: var(--main-bg-color)
 }

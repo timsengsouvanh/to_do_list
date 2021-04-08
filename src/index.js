@@ -49,8 +49,6 @@ function addEventListenersinitial(){
             let potential = dom.createEditTask(obj)
             desc.replaceWith(potential)
             addEventListenerConfirmReplace(obj)
-
-
         }
             )
     })
@@ -115,6 +113,9 @@ function addEventListenerAddTask(){
     let confirmbtn = document.querySelector('.confirm')
     confirmbtn.addEventListener('click', () => {
         todologic.addTask()
+        todologic.clear()
+        initialize()
+        addEventListeners()
     })
 }
 
@@ -134,11 +135,12 @@ function addEventListenerAddProj(){
 function addEventListenerSwitchProject(){
     let projectbtn = document.querySelectorAll('.project-container')
     projectbtn.forEach(element => {
-        element.addEventListener('click', () => {
-           todologic.clear() 
+        element.addEventListener('click', () => { 
            todologic.switchProject(element)
-            initialize()
-            addEventListeners()
+           todologic.clear()
+           initialize()
+           addEventListeners()
+        
         })
             
         })
@@ -149,15 +151,11 @@ export function initialize(){
     currentProject.prioritytask.forEach(task => {
     dom.displayPriorityTasks(task)
 })
-    // let originalSort = currentProject.task.sort((a,b) => a.duedate>b.duedate ? 1:-1)
-    let originalSort = currentProject.task.sort((a,b) => {
-        if(a.duedate == ""){
-            return undefined
-        }
-        else if(a.duedate>b.duedate){
-            return 1
-        }
-        else return -1
+let originalSort = currentProject.task.sort((a,b) => {
+    if(a.duedate === "") return 1;
+    if(b.duedate === "") return -1;
+    if(a.duedate === b.duedate) return 0;
+    return a.duedate < b.duedate ? -1 : 1;
     })
     originalSort.forEach(task => {
     dom.displayTasks(task)
@@ -165,8 +163,8 @@ export function initialize(){
     projects.forEach(project => {
     dom.displayProjects(project)
     })
-
 }
+
 export function addEventListeners(){
 addEventListenersinitial()
 addEventListenerAddButton()
