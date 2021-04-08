@@ -5,8 +5,8 @@ export const project = (name, prioritytask, task) => {
     return {name, prioritytask, task}
 }
 
-export const task = (name, description, duedate) => {
-    return {name, description, duedate}
+export const task = (name, description, duedate, dateadded) => {
+    return {name, description, duedate, dateadded}
 }
 
 export const prioritytask = (name, description, duedate) => {
