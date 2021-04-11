@@ -1,5 +1,6 @@
 :root {
     --main-bg-color: #08348C;
+    --lighter-bg: #07418C;
     --mid-color: #F2E3D5;
     --accent-color: #F27830;
   }
@@ -22,7 +23,7 @@ header {
     font-weight: 700;
 }
 
-#orange{
+#orange, .orange{
     color: var(--accent-color)
 }
 
@@ -88,6 +89,10 @@ button {
     cursor: pointer;
 }
 
+.project-container:hover{
+    background-color: var(--lighter-bg);
+}
+
 .project-check-area{
     display: flex;
     flex-direction: column;
@@ -111,6 +116,10 @@ button {
     cursor: pointer;
 }
 
+.priority-checkbox{
+    background: var(--accent-color);
+}
+
 #addbtn, #addbtnproj {
     font-size: 2rem;
     color: var(--mid-color);
@@ -123,6 +132,10 @@ button {
 .task-container {
     flex-direction: column;
     padding: 1rem 4rem;
+}
+
+.task-container:hover {
+    background-color: var(--lighter-bg);
 }
 
 .potential-task-container {
