@@ -172,7 +172,6 @@ button {
 .description-container {
     display: flex;
     justify-content: space-between;
-    /* padding-top: 2rem; */
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-out;
@@ -197,4 +196,40 @@ input {
 
 ::-webkit-calendar-picker-indicator {
     filter: invert(1);
+}
+
+@media (max-width: 930px){
+    .task-container {
+        flex-direction: column;
+        padding: 1rem 2rem;
+    }
+
+    .check-task-area {
+        gap: 1rem;
+    }
+
+    .margin-desc {
+        margin-left: 4.3rem;
+    }
+    
+    .description-item{
+        font-size: .8rem;
+        padding-top: 1.5rem;
+        max-width: 10rem;
+    }
+
+    .margin{
+        margin-left: .5rem;
+    }
+    .delete-edit-area{
+        gap: 1rem;
+    }
+
+    .description-container {
+        display: flex;
+        justify-content: space-between;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+    }
 }
