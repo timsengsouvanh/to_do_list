@@ -39,11 +39,28 @@ export function createDelete(obj){
 
     return deletebtn
 }
+export function createPriorityDelete(obj){
+    let deletebtn = document.createElement('button')
+    deletebtn.innerHTML = '&times;'
+    deletebtn.classList.add('priority-delete')
+    deletebtn.classList.add('margin')
+    deletebtn.setAttribute('data', (index1.currentProject.prioritytask.indexOf(obj)))
+
+    return deletebtn
+}
 export function createEditbtn(obj){
     let editbtn = document.createElement('button')
     editbtn.innerHTML = '&#xf044;'
     editbtn.classList.add('edit-btn')
     editbtn.setAttribute('data', (index1.currentProject.task.indexOf(obj)))
+
+    return editbtn
+}
+export function createPriorityEditbtn(obj){
+    let editbtn = document.createElement('button')
+    editbtn.innerHTML = '&#xf044;'
+    editbtn.classList.add('priority-edit')
+    editbtn.setAttribute('data', (index1.currentProject.prioritytask.indexOf(obj)))
 
     return editbtn
 }
@@ -168,10 +185,10 @@ export function displayPriorityTasks(obj){
     let deleteEditArea = createDeleteEditArea()
     desc.appendChild(deleteEditArea)
 
-    let editbtn = createEditbtn(obj)
+    let editbtn = createPriorityEditbtn(obj)
     deleteEditArea.appendChild(editbtn)
 
-    let deletebtn = createDelete(obj)
+    let deletebtn = createPriorityDelete(obj)
     deleteEditArea.appendChild(deletebtn)
 
 }
@@ -359,7 +376,6 @@ export function displayProjects(element){
     let projectarea = document.querySelector('#projects')
     let projectmain = createProjectMain(element)
     projectarea.appendChild(projectmain)
-
     let project = createProject(element)
     projectmain.appendChild(project)
 }

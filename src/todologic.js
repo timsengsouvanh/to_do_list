@@ -18,6 +18,11 @@ export function removeTask(target){
     index.currentProject.task.splice(data, 1)
     console.log(index.currentProject.task)
 }
+export function priorityRemoveTask(target){
+    let data = target.getAttribute('data')
+    index.currentProject.prioritytask.splice(data, 1)
+    console.log(index.currentProject.prioritytask)
+}
 
 export function clear(){
     let prioritytaskarea = document.querySelector('#priority-tasks')

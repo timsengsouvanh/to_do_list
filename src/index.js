@@ -37,6 +37,16 @@ function addEventListenersinitial(){
         }
             )
     })
+    let prioritydelbtn = document.querySelectorAll('.priority-delete')
+    prioritydelbtn.forEach(element => {
+        element.addEventListener('click', () => {
+            todologic.priorityRemoveTask(element)
+            todologic.clear()
+            initialize()
+            addEventListeners()
+        }
+            )
+    })
     let editbtn = document.querySelectorAll('.edit-btn')
     editbtn.forEach(element => {
         element.addEventListener('click', () => {
