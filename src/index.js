@@ -62,6 +62,21 @@ function addEventListenersinitial(){
         }
             )
     })
+    let priorityeditbtn = document.querySelectorAll('.priority-edit')
+    priorityeditbtn.forEach(element => {
+        element.addEventListener('click', () => {
+            let data = element.getAttribute('data')
+            let obj = currentProject.prioritytask[data]
+            
+
+            let taskarea = document.querySelector('#tasks')
+            let desc = element.closest('.task-container')
+            let potential = dom.createEditTask(obj)
+            desc.replaceWith(potential)
+            addEventListenerConfirmReplace(obj)
+        }
+            )
+    })
    let checkbox = document.querySelectorAll('.checkbox')
    checkbox.forEach(element => {
        element.addEventListener('change', () => {
@@ -158,7 +173,13 @@ function addEventListenerSwitchProject(){
 
 
 export function initialize(){
-    currentProject.prioritytask.forEach(task => {
+let prioritySort = currentProject.prioritytask.sort((a,b) => {
+    if(a.duedate === "") return 1;
+    if(b.duedate === "") return -1;
+    if(a.duedate === b.duedate) return 0;
+    return a.duedate < b.duedate ? -1 : 1;
+    })
+    prioritySort.forEach(task => {
     dom.displayPriorityTasks(task)
 })
 let originalSort = currentProject.task.sort((a,b) => {
