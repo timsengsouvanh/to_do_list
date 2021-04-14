@@ -48,7 +48,7 @@ header {
     color: var(--accent-color);
 }
 
-.edit-btn, .delete-btn, .confirm {
+.edit-btn, .delete-btn, .confirm, .priority-edit, .priority-delete {
     background-color: var(--accent-color) !important;
 }
 
