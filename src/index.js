@@ -88,14 +88,28 @@ function addEventListenersinitial(){
        })
    })
 
-   let prioritycheckbox = document.querySelectorAll('.priority-checkbox')
-   prioritycheckbox.forEach(element => {
-       element.addEventListener('change', () => { 
-        if (element.checked){
-           todologic.addHighPriority(element)   
-           }
-        else todologic.removeHighPriority(element)
+//    let prioritycheckbox = document.querySelectorAll('.priority-checkbox')
+//    prioritycheckbox.forEach(element => {
+//        element.addEventListener('change', () => { 
+//         if (element.checked){
+//            todologic.addHighPriority(element)   
+//            }
+//         else todologic.removeHighPriority(element)
         
+//        })
+//    })
+   let prioritybtn = document.querySelectorAll('.priority-btn')
+   prioritybtn.forEach(element => {
+       element.addEventListener('click', () => { 
+           todologic.addHighPriority(element)   
+              
+       })
+   })
+   let prioritybtnhigh = document.querySelectorAll('.priority-btn-high')
+   prioritybtnhigh.forEach(element => {
+       element.addEventListener('click', () => { 
+           todologic.removeHighPriority(element)   
+              
        })
    })
 
@@ -202,8 +216,6 @@ addEventListenerAddButton()
 addEventListenerSwitchProject()
 }
 
-// dom.createProject('personal')
-// dom.createProject('work')
 initialize()
 addEventListeners()
 

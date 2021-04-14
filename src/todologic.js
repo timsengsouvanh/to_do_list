@@ -96,26 +96,3 @@ export function removeHighPriority(element){
     console.log(index.currentProject.prioritytask)
     console.log(index.currentProject.task)
 }
-
-// export function checkProjectEmpty(){
-//     if (index.currentProject.task === []){
-//         // return index.currentProject.task.forEach(task => {
-//         //     dom.displayTasks(task)
-//         // })
-//         alert('empty')
-//     }
-//     // else {
-//     //     let originalSort = index.currentProject.task.sort((a,b) => {
-//     //     if(a.duedate == ""){
-//     //         return undefined
-//     //     }
-//     //     else if(a.duedate>b.duedate){
-//     //         return 1
-//     //     }
-//     //     else return -1
-//     // })
-//     // originalSort.forEach(task => {
-//     // dom.displayTasks(task)
-//     // })
-// }
-

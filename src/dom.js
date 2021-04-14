@@ -77,21 +77,21 @@ export function createCheckbox(){
     checkbox.classList.add('checkbox')
     return checkbox
 }
-export function createPriorityCheckbox(obj){
-    let checkbox = document.createElement('input')
-    checkbox.setAttribute('type', 'checkbox')
-    checkbox.setAttribute('data', (index1.currentProject.task.indexOf(obj)))
-    checkbox.classList.add('priority-checkbox')
-    return checkbox
+export function createPriorityBtn(obj){
+    let prioritybtn = document.createElement('button')
+    prioritybtn.innerHTML = '<i class="far fa-flag"></i>';
+    // checkbox.setAttribute('type', 'checkbox')
+    prioritybtn.setAttribute('data', (index1.currentProject.task.indexOf(obj)))
+    prioritybtn.classList.add('priority-btn')
+    return prioritybtn
 }
 
-export function createPriorityCheckboxHigh(obj){
-    let checkbox = document.createElement('input')
-    checkbox.setAttribute('type', 'checkbox')
-    checkbox.setAttribute('data', (index1.currentProject.prioritytask.indexOf(obj)))
-    checkbox.checked = true
-    checkbox.classList.add('priority-checkbox')
-    return checkbox
+export function createPriorityBtnHigh(obj){
+    let prioritybtnhigh = document.createElement('button')
+    prioritybtnhigh.innerHTML = '<i class="fas fa-flag"></i>';
+    prioritybtnhigh.setAttribute('data', (index1.currentProject.prioritytask.indexOf(obj)))
+    prioritybtnhigh.classList.add('priority-btn-high')
+    return prioritybtnhigh
 }
 
 export function createTitleArea(){
@@ -127,8 +127,8 @@ export function displayTasks(obj){
     let date = createDate(obj)
     titlearea.appendChild(date)
 
-    let pricheckbox = createPriorityCheckbox(obj)
-    taskCheckArea.appendChild(pricheckbox)
+    let prioritybtn = createPriorityBtn(obj)
+    taskCheckArea.appendChild(prioritybtn)
 
     let checkbox = createCheckbox()
     taskCheckArea.appendChild(checkbox)
@@ -167,8 +167,8 @@ export function displayPriorityTasks(obj){
     let date = createDate(obj)
     titlearea.appendChild(date)
 
-    let pricheckbox = createPriorityCheckboxHigh(obj)
-    taskCheckArea.appendChild(pricheckbox)
+    let prioritybtnhigh = createPriorityBtnHigh(obj)
+    taskCheckArea.appendChild(prioritybtnhigh)
 
     let checkbox = createCheckbox()
     taskCheckArea.appendChild(checkbox)
