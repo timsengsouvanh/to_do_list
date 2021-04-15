@@ -144,6 +144,7 @@ function addEventListenerAddButton(){
         dom.createPotentialProject()
         addEventListenerAddProj()
         
+        
         }
     })
 }
@@ -168,6 +169,10 @@ function addEventListenerAddProj(){
     let confirmbtn = document.querySelector('.confirm')
     confirmbtn.addEventListener('click', () => {
         todologic.addProject()
+        currentProject = projects[projects.length-1]
+        todologic.clear()
+        initialize()
+        addEventListeners()
     })
 }
 

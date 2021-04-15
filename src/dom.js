@@ -195,6 +195,7 @@ export function displayPriorityTasks(obj){
 
 export function createTaskTitleInput(obj){
     let titleInput = document.createElement('input')
+    titleInput.size = '30'
     titleInput.setAttribute('type', 'text')
     titleInput.setAttribute('id', 'textinput')
     titleInput.setAttribute('placeholder', 'Task')
@@ -212,6 +213,7 @@ export function createTaskEditTitleInput(obj){
 
 export function createDescriptionInput(){
     let titleInput = document.createElement('input')
+    titleInput.size = '30'
     titleInput.setAttribute('type', 'text')
     titleInput.setAttribute('id', 'description-input')
     titleInput.setAttribute('placeholder', 'Description')

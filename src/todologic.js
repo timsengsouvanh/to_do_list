@@ -34,15 +34,28 @@ export function clear(){
 }
 
 export function addTask(){
-    let title = document.getElementById('textinput')
+    let title = function (){
+       let title = document.getElementById('textinput')
+       if (title.value === ''){
+           return 'Unnamed Task'
+       }
+       else return title.value}
     let description = document.getElementById('description-input')
     let date = document.getElementById('date-input')
     let dateadded = Date.now()
-    let newtask = task(title.value, description.value, date.value, dateadded)
+    let newtask = task(title(), description.value, date.value, dateadded)
     index.currentProject.task.push(newtask)
 
     console.log(index.currentProject.task)
 }
+
+export function checkTitleValue(){
+    if (title.value = ""){
+        return 'No Name'
+    }
+    else title.value
+}
+
 export function replaceTask(obj){
     let title = document.getElementById('textinput')
     let description = document.getElementById('description-input')
