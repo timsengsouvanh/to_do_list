@@ -3,9 +3,9 @@ import * as dom from './dom'
 
 
 export let personal = [
-    todologic.task('study programming', 'study everyday and continue doing this project', '2021-04-21', 1),
-    todologic.task('study japanese', 'do anki and all the reviews, try to listen to all sentences', '2021-08-19', 3),
-    todologic.task('watch anime', 'watch evangelion, and later watch cowboy bebop', '2021-10-11', 2),
+    todologic.task('study programming', 'study everyday and continue doing this project', '2021-04-21', 1, true),
+    todologic.task('study japanese', 'do anki and all the reviews, try to listen to all sentences', '2021-08-19', 3, false),
+    todologic.task('watch anime', 'watch evangelion, and later watch cowboy bebop', '2021-10-11', 2, false),
 
 ];
 
@@ -82,22 +82,23 @@ function addEventListenersinitial(){
        element.addEventListener('change', () => {
         let checktask = element.closest('.title-area') 
         if (element.checked){
+           checktask.classList.add('completed-item')
+           todologic.completedTask(element)    
+           }
+        else checktask.classList.remove('completed-item') 
+       })
+   })
+   let prioritycheckbox = document.querySelectorAll('.priority-checkbox')
+   prioritycheckbox.forEach(element => {
+       element.addEventListener('change', () => {
+        let checktask = element.closest('.title-area') 
+        if (element.checked){
            checktask.classList.add('completed-item')    
            }
         else checktask.classList.remove('completed-item') 
        })
    })
 
-//    let prioritycheckbox = document.querySelectorAll('.priority-checkbox')
-//    prioritycheckbox.forEach(element => {
-//        element.addEventListener('change', () => { 
-//         if (element.checked){
-//            todologic.addHighPriority(element)   
-//            }
-//         else todologic.removeHighPriority(element)
-        
-//        })
-//    })
    let prioritybtn = document.querySelectorAll('.priority-btn')
    prioritybtn.forEach(element => {
        element.addEventListener('click', () => { 
@@ -146,6 +147,22 @@ function addEventListenerAddButton(){
         
         
         }
+    })
+}
+
+function addEventListenerClearButton(){
+    let clearbtn = document.querySelector('#clearbtn')
+    clearbtn.addEventListener('click', () => {
+        let checkbox = document.querySelectorAll('.checkbox')
+        checkbox.forEach(element => {
+            if (element.checked){
+                todologic.removeTask(element)
+                todologic.clear()
+                initialize()
+                addEventListeners()
+
+            }
+        })
     })
 }
 
@@ -218,6 +235,7 @@ let originalSort = currentProject.task.sort((a,b) => {
 export function addEventListeners(){
 addEventListenersinitial()
 addEventListenerAddButton()
+addEventListenerClearButton()
 addEventListenerSwitchProject()
 }
 

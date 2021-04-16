@@ -5,8 +5,8 @@ export const project = (name, prioritytask, task) => {
     return {name, prioritytask, task}
 }
 
-export const task = (name, description, duedate, dateadded) => {
-    return {name, description, duedate, dateadded}
+export const task = (name, description, duedate, dateadded, completed) => {
+    return {name, description, duedate, dateadded, completed}
 }
 
 export const prioritytask = (name, description, duedate) => {
@@ -22,6 +22,12 @@ export function priorityRemoveTask(target){
     let data = target.getAttribute('data')
     index.currentProject.prioritytask.splice(data, 1)
     console.log(index.currentProject.prioritytask)
+}
+
+export function completedTask(target){
+    let data = target.getAttribute('data')
+    index.currentProject.task[data].completed = true
+    console.log(index.currentProject.task)
 }
 
 export function clear(){
@@ -43,7 +49,8 @@ export function addTask(){
     let description = document.getElementById('description-input')
     let date = document.getElementById('date-input')
     let dateadded = Date.now()
-    let newtask = task(title(), description.value, date.value, dateadded)
+    let completed = false;
+    let newtask = task(title(), description.value, date.value, dateadded, completed)
     index.currentProject.task.push(newtask)
 
     console.log(index.currentProject.task)

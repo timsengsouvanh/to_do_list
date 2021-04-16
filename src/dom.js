@@ -71,10 +71,25 @@ export function createDeleteEditArea(){
     return deleteEditArea
 }
 
-export function createCheckbox(){
+export function createCheckbox(obj){
     let checkbox = document.createElement('input')
     checkbox.setAttribute('type', 'checkbox')
     checkbox.classList.add('checkbox')
+    function completed (obj){
+        if (obj.completed === true){
+            return checkbox.checked = true;
+        }
+        else return checkbox.checked = false;
+    }
+    completed(obj)
+    checkbox.setAttribute('data', (index1.currentProject.task.indexOf(obj)))
+    return checkbox
+}
+export function createPriorityCheckbox(obj){
+    let checkbox = document.createElement('input')
+    checkbox.setAttribute('type', 'checkbox')
+    checkbox.classList.add('priority-checkbox')
+    checkbox.setAttribute('data', (index1.currentProject.prioritytask.indexOf(obj)))
     return checkbox
 }
 export function createPriorityBtn(obj){
@@ -94,7 +109,7 @@ export function createPriorityBtnHigh(obj){
     return prioritybtnhigh
 }
 
-export function createTitleArea(){
+export function createTitleArea(obj){
     let title = document.createElement('div')
     title.classList.add('title-area')
     return title
@@ -118,7 +133,7 @@ export function displayTasks(obj){
     let task = createTaskMain()
     taskarea.appendChild(task)
 
-    let titlearea = createTitleArea()
+    let titlearea = createTitleArea(obj)
     task.appendChild(titlearea)
 
     let taskCheckArea = createCheckTaskArea()
@@ -130,7 +145,7 @@ export function displayTasks(obj){
     let prioritybtn = createPriorityBtn(obj)
     taskCheckArea.appendChild(prioritybtn)
 
-    let checkbox = createCheckbox()
+    let checkbox = createCheckbox(obj)
     taskCheckArea.appendChild(checkbox)
 
     let taskName = createTask(obj)
@@ -151,6 +166,13 @@ export function displayTasks(obj){
     let deletebtn = createDelete(obj)
     deleteEditArea.appendChild(deletebtn)
 
+    function completed (obj){
+        if (obj.completed === true){
+            return titlearea.classList.add('completed-item');
+        }
+    }
+    completed(obj)
+
 }
 
 export function displayPriorityTasks(obj){
@@ -170,7 +192,7 @@ export function displayPriorityTasks(obj){
     let prioritybtnhigh = createPriorityBtnHigh(obj)
     taskCheckArea.appendChild(prioritybtnhigh)
 
-    let checkbox = createCheckbox()
+    let checkbox = createPriorityCheckbox(obj)
     taskCheckArea.appendChild(checkbox)
 
     let taskName = createTask(obj)
