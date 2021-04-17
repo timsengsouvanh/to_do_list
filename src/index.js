@@ -3,7 +3,7 @@ import * as dom from './dom'
 
 
 export let personal = [
-    todologic.task('study programming', 'study everyday and continue doing this project', '2021-04-21', '1', true),
+    todologic.task('study programming', 'study everyday and continue doing this project', '2021-04-21', '1', false),
     todologic.task('study japanese', 'do anki and all the reviews, try to listen to all sentences', '2021-08-19', '3', false),
     todologic.task('watch anime', 'watch evangelion, and later watch cowboy bebop', '2021-10-11', '2', false),
 

@@ -140,13 +140,16 @@ button {
     background: var(--accent-color);
 }
 
-#addbtn, #addbtnproj {
-    font-size: 2rem;
+#addbtn, #addbtnproj, #clearbtn {
+    font-size: 1rem;
     color: var(--mid-color);
-    padding: .4rem 1rem;
+    padding: .25rem .6rem;
     background-color:var(--accent-color);
     border: none;
-    border-radius: 50%;
+}
+
+#addbtn, #clearbtn {
+    font-size: .8rem;
 }
 
 .task-container {
@@ -179,9 +182,10 @@ button {
 }
 
 #crudbtn{
-    padding: .5rem 4rem;
     display: flex;
     justify-content: flex-end;
+    gap: .3rem;
+    margin-right: 4rem;
 }
 
 #crudbtnproj {
