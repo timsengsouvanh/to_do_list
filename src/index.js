@@ -3,9 +3,9 @@ import * as dom from './dom'
 
 
 export let personal = [
-    todologic.task('study programming', 'study everyday and continue doing this project', '2021-04-21', 1, true),
-    todologic.task('study japanese', 'do anki and all the reviews, try to listen to all sentences', '2021-08-19', 3, false),
-    todologic.task('watch anime', 'watch evangelion, and later watch cowboy bebop', '2021-10-11', 2, false),
+    todologic.task('study programming', 'study everyday and continue doing this project', '2021-04-21', '1', true),
+    todologic.task('study japanese', 'do anki and all the reviews, try to listen to all sentences', '2021-08-19', '3', false),
+    todologic.task('watch anime', 'watch evangelion, and later watch cowboy bebop', '2021-10-11', '2', false),
 
 ];
 
@@ -101,8 +101,8 @@ function addEventListenersinitial(){
            checktask.classList.add('completed-item')
            todologic.completedPriorityTask(obj)    
            }
-        else checktask.classList.remove('completed-item') 
-            todologic.uncompletePriorityTask(obj)
+        else {checktask.classList.remove('completed-item') 
+            todologic.uncompletePriorityTask(obj)}
        })
    })
 
@@ -160,16 +160,25 @@ function addEventListenerAddButton(){
 function addEventListenerClearButton(){
     let clearbtn = document.querySelector('#clearbtn')
     clearbtn.addEventListener('click', () => {
-        let checkbox = document.querySelectorAll('.checkbox')
-        checkbox.forEach(element => {
-            if (element.checked){
-                todologic.removeTask(element)
-                todologic.clear()
-                initialize()
-                addEventListeners()
-
+        currentProject.task.forEach(obj => {
+            let index = currentProject.task.indexOf(obj)
+            if (obj.completed === true){
+            currentProject.task.splice(index, 1)
+            todologic.clear()
+            initialize()
+            addEventListeners()
             }
         })
+        currentProject.prioritytask.forEach(obj => {
+            let index = currentProject.prioritytask.indexOf(obj)
+            if (obj.completed === true){
+            currentProject.prioritytask.splice(index, 1)
+            todologic.clear()
+            initialize()
+            addEventListeners()
+            }
+        })
+        
     })
 }
 

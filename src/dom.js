@@ -85,6 +85,12 @@ export function createCheckbox(obj){
     checkbox.setAttribute('data', (index1.currentProject.task.indexOf(obj)))
     return checkbox
 }
+export function createPotentialCheckbox(){
+    let checkbox = document.createElement('input')
+    checkbox.setAttribute('type', 'checkbox')
+    checkbox.classList.add('checkbox')
+    return checkbox
+}
 export function createPriorityCheckbox(obj){
     let checkbox = document.createElement('input')
     checkbox.setAttribute('type', 'checkbox')
@@ -322,7 +328,7 @@ export function createPotentialTask(){
     let taskCheckArea = createCheckTaskArea()
     firstLine.appendChild(taskCheckArea)
 
-    let checkbox = createCheckbox()
+    let checkbox = createPotentialCheckbox()
     taskCheckArea.appendChild(checkbox)
 
     let titleInput = createTaskTitleInput()
@@ -362,7 +368,7 @@ export function createEditTask(obj){
     let taskCheckArea = createCheckTaskArea()
     firstLine.appendChild(taskCheckArea)
 
-    let checkbox = createCheckbox()
+    let checkbox = createCheckbox(obj)
     taskCheckArea.appendChild(checkbox)
 
     let titleInput = createTaskEditTitleInput(obj)
