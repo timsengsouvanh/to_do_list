@@ -10,7 +10,7 @@ export let personal = [
 ];
 
 export let prioritypersonal = [
-    todologic.task('move out', 'need to organize moving out', '2021-04-29')
+    todologic.prioritytask('move out', 'need to organize moving out', '2021-04-29', true)
 ]
 
 export let work = [
@@ -80,22 +80,29 @@ function addEventListenersinitial(){
    let checkbox = document.querySelectorAll('.checkbox')
    checkbox.forEach(element => {
        element.addEventListener('change', () => {
-        let checktask = element.closest('.title-area') 
+        let checktask = element.closest('.title-area')
+        let data = element.getAttribute('data')
+        let obj = currentProject.task[data] 
         if (element.checked){
            checktask.classList.add('completed-item')
-           todologic.completedTask(element)    
+           todologic.completedTask(obj)    
            }
-        else checktask.classList.remove('completed-item') 
+        else {checktask.classList.remove('completed-item')
+            todologic.uncompleteTask(obj)}
        })
    })
    let prioritycheckbox = document.querySelectorAll('.priority-checkbox')
    prioritycheckbox.forEach(element => {
        element.addEventListener('change', () => {
-        let checktask = element.closest('.title-area') 
+        let checktask = element.closest('.title-area')
+        let data = element.getAttribute('data')
+        let obj = currentProject.prioritytask[data]  
         if (element.checked){
-           checktask.classList.add('completed-item')    
+           checktask.classList.add('completed-item')
+           todologic.completedPriorityTask(obj)    
            }
         else checktask.classList.remove('completed-item') 
+            todologic.uncompletePriorityTask(obj)
        })
    })
 

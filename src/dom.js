@@ -89,6 +89,13 @@ export function createPriorityCheckbox(obj){
     let checkbox = document.createElement('input')
     checkbox.setAttribute('type', 'checkbox')
     checkbox.classList.add('priority-checkbox')
+    function completed (obj){
+        if (obj.completed === true){
+            return checkbox.checked = true;
+        }
+        else return checkbox.checked = false;
+    }
+    completed(obj)
     checkbox.setAttribute('data', (index1.currentProject.prioritytask.indexOf(obj)))
     return checkbox
 }
@@ -212,6 +219,13 @@ export function displayPriorityTasks(obj){
 
     let deletebtn = createPriorityDelete(obj)
     deleteEditArea.appendChild(deletebtn)
+
+    function completed (obj){
+        if (obj.completed === true){
+            return titlearea.classList.add('completed-item');
+        }
+    }
+    completed(obj)
 
 }
 

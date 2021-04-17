@@ -9,8 +9,8 @@ export const task = (name, description, duedate, dateadded, completed) => {
     return {name, description, duedate, dateadded, completed}
 }
 
-export const prioritytask = (name, description, duedate) => {
-    return {name, description, duedate}
+export const prioritytask = (name, description, duedate, completed) => {
+    return {name, description, duedate, completed}
 }
 
 export function removeTask(target){
@@ -24,10 +24,21 @@ export function priorityRemoveTask(target){
     console.log(index.currentProject.prioritytask)
 }
 
-export function completedTask(target){
-    let data = target.getAttribute('data')
-    index.currentProject.task[data].completed = true
+export function completedTask(obj){
+    obj.completed = true
     console.log(index.currentProject.task)
+}
+export function completedPriorityTask(obj){
+    obj.completed = true
+    console.log(index.currentProject.prioritytask)
+}
+export function uncompleteTask(obj){
+    obj.completed = false
+    console.log(index.currentProject.task)
+}
+export function uncompletePriorityTask(obj){
+    obj.completed = false
+    console.log(index.currentProject.prioritytask)
 }
 
 export function clear(){
