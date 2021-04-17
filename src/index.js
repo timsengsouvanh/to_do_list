@@ -14,8 +14,8 @@ export let prioritypersonal = [
 ]
 
 export let work = [
-    todologic.task('Teach','Teach all lessons and assign homework','2021-06-09', '2'),
-    todologic.task('PPP', 'Do not forget to use YNOK and do a lot of practice with students', '2021-08-22', '1')
+    todologic.task('Teach','Teach all lessons and assign homework','2021-06-09', '2', false),
+    todologic.task('PPP', 'Do not forget to use YNOK and do a lot of practice with students', '2021-08-22', '1', false)
 ];
 
 export let projects = [
