@@ -47,6 +47,19 @@ function addEventListenersinitial(){
         }
             )
     })
+    let projectdelbtn = document.querySelectorAll('.delete-project-btn')
+    projectdelbtn.forEach(element => {
+        element.addEventListener('click', () => {
+            todologic.removeProject(element)
+            currentProject = projects[0]
+            todologic.clear()
+            initialize()
+            addEventListeners()
+        }
+            )
+    })
+
+
     let editbtn = document.querySelectorAll('.edit-btn')
     editbtn.forEach(element => {
         element.addEventListener('click', () => {
@@ -214,6 +227,7 @@ function addEventListenerSwitchProject(){
     projectbtn.forEach(element => {
         element.addEventListener('click', () => { 
            todologic.switchProject(element)
+           console.log(currentProject)
            todologic.clear()
            initialize()
            addEventListeners()
@@ -225,6 +239,7 @@ function addEventListenerSwitchProject(){
 
 
 export function initialize(){
+
 let prioritySort = currentProject.prioritytask.sort((a,b) => {
     if(a.duedate === "") return 1;
     if(b.duedate === "") return -1;
@@ -246,13 +261,14 @@ let originalSort = currentProject.task.sort((a,b) => {
     projects.forEach(project => {
     dom.displayProjects(project)
     })
+
 }
 
 export function addEventListeners(){
 addEventListenersinitial()
 addEventListenerAddButton()
 addEventListenerClearButton()
-addEventListenerSwitchProject()
+// addEventListenerSwitchProject()
 }
 
 initialize()

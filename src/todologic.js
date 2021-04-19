@@ -23,6 +23,15 @@ export function priorityRemoveTask(target){
     index.currentProject.prioritytask.splice(data, 1)
     console.log(index.currentProject.prioritytask)
 }
+export function removeProject(element){
+    let data = element.getAttribute('data')
+    index.projects.splice(data, 1)
+    console.log(index.projects)
+}
+
+export function defaultProject(){
+    return index.currentProject = projects[0]
+}
 
 export function completedTask(obj){
     obj.completed = true

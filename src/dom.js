@@ -416,12 +416,27 @@ export function createProject(project){
     return projects
 }
 
+export function createDeleteProject(project){
+    let deletebtn = document.createElement('button')
+    deletebtn.innerHTML = '&times;'
+    deletebtn.classList.add('delete-project-btn')
+    deletebtn.classList.add('margin')
+    deletebtn.setAttribute('data', (index1.projects.indexOf(project)))
+
+    return deletebtn
+}
+
 export function displayProjects(element){
     let projectarea = document.querySelector('#projects')
+
     let projectmain = createProjectMain(element)
     projectarea.appendChild(projectmain)
+
     let project = createProject(element)
     projectmain.appendChild(project)
+
+    let deletebtn = createDeleteProject(element)
+    projectmain.appendChild(deletebtn)
 }
 
 export function createProjectMain(project){
