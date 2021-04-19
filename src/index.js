@@ -223,7 +223,7 @@ function addEventListenerAddProj(){
 }
 
 function addEventListenerSwitchProject(){
-    let projectbtn = document.querySelectorAll('.project-container')
+    let projectbtn = document.querySelectorAll('.project-item')
     projectbtn.forEach(element => {
         element.addEventListener('click', () => { 
            todologic.switchProject(element)
@@ -268,7 +268,7 @@ export function addEventListeners(){
 addEventListenersinitial()
 addEventListenerAddButton()
 addEventListenerClearButton()
-// addEventListenerSwitchProject()
+addEventListenerSwitchProject()
 }
 
 initialize()
