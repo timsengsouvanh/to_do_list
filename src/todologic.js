@@ -100,8 +100,8 @@ export function addProject(){
     let title = document.getElementById('textinput')
     let newproject = project(title.value, [], [])
     index.projects.push(newproject)
-    clear()
-    index.initialize()
+    // clear()
+    // index.initialize()
     index.addEventListeners()
     console.log(index.projects)
 

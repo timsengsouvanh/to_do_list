@@ -39,6 +39,14 @@ export function createDelete(obj){
 
     return deletebtn
 }
+export function createProjectDelete(){
+    let deletebtn = document.createElement('button')
+    deletebtn.innerHTML = '&times;'
+    deletebtn.classList.add('delete-btn')
+    deletebtn.classList.add('margin')
+
+    return deletebtn
+}
 export function createPriorityDelete(obj){
     let deletebtn = document.createElement('button')
     deletebtn.innerHTML = '&times;'
@@ -476,7 +484,7 @@ export function createPotentialProject(){
     let checkmark = createConfirmNewTask()
     projectConfirmDeleteArea.appendChild(checkmark)
 
-    let deletebtn = createDelete()
+    let deletebtn = createProjectDelete()
     deletebtn.addEventListener('click', () => {
         project.remove()
     })

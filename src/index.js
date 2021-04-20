@@ -50,6 +50,10 @@ function addEventListenersinitial(){
     let projectdelbtn = document.querySelectorAll('.delete-project-btn')
     projectdelbtn.forEach(element => {
         element.addEventListener('click', () => {
+            // if (element.getAttribute('data') === '0'){
+            //     return null
+            // }
+            // else 
             todologic.removeProject(element)
             currentProject = projects[0]
             todologic.clear()
@@ -164,6 +168,7 @@ function addEventListenerAddButton(){
         if (document.getElementById('textinput') === null){
         dom.createPotentialProject()
         addEventListenerAddProj()
+        console.log(projects)
         
         
         }
@@ -239,29 +244,38 @@ function addEventListenerSwitchProject(){
 
 
 export function initialize(){
+if (projects.length === 0){
+    return null
+}
 
-let prioritySort = currentProject.prioritytask.sort((a,b) => {
-    if(a.duedate === "") return 1;
-    if(b.duedate === "") return -1;
-    if(a.duedate === b.duedate) return 0;
-    return a.duedate < b.duedate ? -1 : 1;
+else if (currentProject.prioritytask.length === 0 && currentProject.task.length === 0){
+    projects.forEach(project => {
+        dom.displayProjects(project)
+    })
+}
+else if (projects.length>=1){
+    let prioritySort = currentProject.prioritytask.sort((a,b) => {
+        if(a.duedate === "") return 1;
+        if(b.duedate === "") return -1;
+        if(a.duedate === b.duedate) return 0;
+        return a.duedate < b.duedate ? -1 : 1;
     })
     prioritySort.forEach(task => {
     dom.displayPriorityTasks(task)
-})
-let originalSort = currentProject.task.sort((a,b) => {
-    if(a.duedate === "") return 1;
-    if(b.duedate === "") return -1;
-    if(a.duedate === b.duedate) return 0;
+    })
+    let originalSort = currentProject.task.sort((a,b) => {
+        if(a.duedate === "") return 1;
+        if(b.duedate === "") return -1;
+        if(a.duedate === b.duedate) return 0;
     return a.duedate < b.duedate ? -1 : 1;
     })
-    originalSort.forEach(task => {
-    dom.displayTasks(task)
-})
-    projects.forEach(project => {
-    dom.displayProjects(project)
+        originalSort.forEach(task => {
+        dom.displayTasks(task)
     })
-
+        projects.forEach(project => {
+        dom.displayProjects(project)
+    })
+}
 }
 
 export function addEventListeners(){
