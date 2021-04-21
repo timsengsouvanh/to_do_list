@@ -29,6 +29,14 @@ export function removeProject(element){
     console.log(index.projects)
 }
 
+export function removeCurrentProject(){
+    
+    let index1 = index.projects.indexOf(index.currentProject)
+    index.projects.splice(index1,1)
+    console.log(index1)
+    return false
+}
+
 export function defaultProject(){
     return index.currentProject = projects[0]
 }
@@ -51,6 +59,8 @@ export function uncompletePriorityTask(obj){
 }
 
 export function clear(){
+    let crudbtn = document.querySelector('#delete-pro-btn')
+    crudbtn.remove()
     let prioritytaskarea = document.querySelector('#priority-tasks')
     prioritytaskarea.innerHTML = ''
     let taskarea = document.querySelector('#tasks')
@@ -107,8 +117,8 @@ export function addProject(){
 
 }
 
-export function switchProject(target){
-    let num = target.getAttribute('data')
+export function switchProject(element){
+    let num = element.getAttribute('data')
     let arrind = parseInt(num)
     return index.currentProject = index.projects[arrind]
 }

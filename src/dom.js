@@ -58,7 +58,7 @@ export function createPriorityDelete(obj){
 }
 export function createEditbtn(obj){
     let editbtn = document.createElement('button')
-    editbtn.innerHTML = '&#xf044;'
+    editbtn.innerText = 'EDIT'
     editbtn.classList.add('edit-btn')
     editbtn.setAttribute('data', (index1.currentProject.task.indexOf(obj)))
 
@@ -66,7 +66,7 @@ export function createEditbtn(obj){
 }
 export function createPriorityEditbtn(obj){
     let editbtn = document.createElement('button')
-    editbtn.innerHTML = '&#xf044;'
+    editbtn.innerText = 'EDIT'
     editbtn.classList.add('priority-edit')
     editbtn.setAttribute('data', (index1.currentProject.prioritytask.indexOf(obj)))
 
@@ -149,7 +149,16 @@ export function createDescriptionArea(){
     return desc
 }
 
+export function deleteprojectcurrent(){
+    let crud = document.querySelector('#crudbtn')
+    let deleteproject = document.createElement('button')
+    deleteproject.innerText = 'DELETE PROJECT'
+    deleteproject.setAttribute('id', 'delete-pro-btn')
+    crud.appendChild(deleteproject)
+}
+
 export function displayTasks(obj){
+
     let taskarea = document.querySelector('#tasks')
     let task = createTaskMain()
     taskarea.appendChild(task)
