@@ -151,10 +151,15 @@ export function createDescriptionArea(){
 
 export function deleteprojectcurrent(){
     let crud = document.querySelector('#crudbtn')
+    let clear = document.querySelector('#clearbtn')
+    let add = document.querySelector('#addbtn')
     let deleteproject = document.createElement('button')
     deleteproject.innerText = 'DELETE PROJECT'
     deleteproject.setAttribute('id', 'delete-pro-btn')
     crud.appendChild(deleteproject)
+   
+    deleteproject.after(add)
+     deleteproject.after(clear)
 }
 
 export function displayTasks(obj){
@@ -452,8 +457,8 @@ export function displayProjects(element){
     let project = createProject(element)
     projectmain.appendChild(project)
 
-    let deletebtn = createDeleteProject(element)
-    projectmain.appendChild(deletebtn)
+    // let deletebtn = createDeleteProject(element)
+    // projectmain.appendChild(deletebtn)
 }
 
 export function createProjectMain(project){
